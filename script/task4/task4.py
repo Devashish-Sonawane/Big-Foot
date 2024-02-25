@@ -130,7 +130,7 @@ for index, row in bigfoot_df[['State', 'County', 'Nearest Road', 'Nearest Town',
         , None))
     new_cols['Formatted Address'].append(filtered_res[0]['formatted_address'])
 bigfoot_df = pd.concat([bigfoot_df, pd.DataFrame(new_cols)], axis=1)
-bigfoot_df.to_csv('dataset1/reports_task4_1.tsv', sep='\t', index=False)
+bigfoot_df.to_csv('dataset1/reports_task4-a_1.tsv', sep='\t', index=False)
 
 # ===================================
 # section 3: load national park data
@@ -161,4 +161,4 @@ bigfoot_df = pd.merge(
     left_on=['Fixed Year', 'Nearest NP'], right_on=['Year', 'Park'], how='left')
 bigfoot_df.drop(columns=['Park','Year_y'], inplace=True)
 bigfoot_df.rename(columns={'Recreation Visits': 'National Park Visitation Count'}, inplace=True)
-bigfoot_df.to_csv('dataset1/reports_task4_last.tsv', sep='\t', index=False)
+bigfoot_df.to_csv('dataset1/reports_task4-a_last.tsv', sep='\t', index=False)
