@@ -52,5 +52,5 @@ people = ('friends, parents, children, brothers, kids, sons, roommates, uncles, 
 
 # word count
 data_count = data_words_rr.apply(ewc.extract_witnesses_count, psn=person.split(', '), ppl=people.split(', '))
-bigfoot_df['Multiple Witnesses'] = data_count
+bigfoot_df['Witness Count'] = data_count
 bigfoot_df.to_csv('dataset1/reports_task4-b_last.tsv', sep='\t', index=False)
