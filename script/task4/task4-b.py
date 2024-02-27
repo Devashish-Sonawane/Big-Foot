@@ -30,7 +30,7 @@ data_words = parsed_witnesses.str.lower().apply(lambda x: ' '.join(re.findall(r'
 replace_str = ('freind:friend|freinds:friends|boy friend:boyfriend|girl friend:girlfriend|g f:girlfriend|girfriend:girlfriend|'
                'my self:myself|self:myself|fiancee:fiance|financee:fiance|mum:mom|yeah:yes|husban:husband|huband:husband|'
                'wifes:wives|daugher:daughter|roomate:roommate|girlfreind:girlfriend|neighors:neighbors|twin:twins|'
-               'bf:boyfriend|sis:sister|siste:sister')
+               'bf:boyfriend|sis:sister|siste:sister|(\\d{1,2})\\s\\d{1,2}:\\1')
 tmp, replace_list_to = zip(*[pair.split(':') for pair in replace_str.split('|')])
 replace_list_from = ['\\b' + w + '\\b' for w in tmp]
 data_words_r = ewc.replace(data_words, replace_list_from, replace_list_to, True)
