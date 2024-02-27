@@ -14,30 +14,37 @@ def replace(df, replace_from, replace_to, reg=False):
 
 def extract_witnesses_count(text, psn, ppl):
     # for debug
-    flag = random.random() < 0.01
+    # flag = random.random() < 0.01
+    flag = False
     res = None
-
+    no_head = r'^there\b(was|were|are|where)\b(no|none|nobody|not)\b'
+    total_head = r'^((yes\b)?there\b(was\b|were\b|are\b|where\b)?|i was the only\b)?(a total of\b|just\b|only\b)?\d{1,2}\b'
+    total_suffix = ['of us', 'all together', 'witnesses total']
     # tokenize
     tokens = re.findall(r'\w+', text)
     s = tokens[0]
     # main count
     if bool(re.search(r'\b\d{1,2}\b', text)):
-        if s.isdigit() and 1 <= len(s) <= 2:
-            if len(tokens) == 1:
-                flag = False
-                res = int(s)
-            elif tokens[1] in ['other', 'others'] or s == '0':
-                res = int(s) + 1
-            else:
-                res = int(s)
+        if len(tokens) == 1:
+            flag = False
+            res = 1 + int(s)
         elif s in 'no none nobody nope not sorry'.split():
             res = 1
+        elif re.match(no_head, text):
+            res = 1
+        elif s.isdigit() and 1 <= len(s) <= 2:
+            if int(s) == 1:
+                res = 1 + int(s)
+            else:
+                res = int(s) if ''.join(tokens[1:2]) not in ['other', 'others'] else 1 + int(s)
+        elif re.match(total_head, text):
+            res = int(re.search(r'\b\d{1,2}\b', text).group())
         else:
             res = 1 + len({t for t in tokens if t in psn})
             for i, word in enumerate(tokens):
                 if re.match(r'\b\d{1,2}\b', word):
-                    tokens_after_digit = tokens[i + 1:i + 2]
-                    if ' '.join(tokens_after_digit) == 'of us':
+                    tokens_after_digit = tokens[i + 1:i + 3]
+                    if ' '.join(tokens_after_digit) in total_suffix:
                         res = int(word)
                         break
                     for j, tad in enumerate(tokens_after_digit):
