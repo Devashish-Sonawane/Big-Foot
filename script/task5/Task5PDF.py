@@ -45,13 +45,13 @@ def merge_pdf(tsv):
 
                 
     #tsv = pd.read_table('dataset1/reports_task5.tsv', encoding='utf8')
-    df = pd.DataFrame(tsv)
+    #df = pd.DataFrame(tsv)
 
     col = ['State', 'Fixed Year', 'State Resident Population', 'State Population Density', 'Census Rank']
     df2 = pd.DataFrame(complete, columns = col) 
 
     bigfoot_df = pd.merge(
-        df,
+        tsv,
         df2[['State', 'Fixed Year', 'State Resident Population', 'State Population Density', 'Census Rank']],
         left_on=['State', 'Fixed Year'], right_on=['State', 'Fixed Year'], how='left')
 
