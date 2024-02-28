@@ -30,10 +30,11 @@ dfWeather = dfWeather.groupby(['State', 'County', 'Formated_date'], as_index=Fal
 # len(set(df['County']) - (set(df['County']) & set(dfWeather['County'])))  # 326
 # len((set(df['County']) - (set(df['County']) & set(dfWeather['County']))) & set(dfWeather['City']))  # 38
 
+dfWeather = dfWeather.rename(columns={'Year': 'Weather Year', 'State': 'State Short'})
 bigfoot_df = pd.merge(
     df,
     dfWeather,
-    left_on=['State Short', 'County', 'Submitted Date Time'], right_on=['State', 'County', 'Formated_date'], how='left')
+    left_on=['State Short', 'County', 'Submitted Date Time'], right_on=['State Short', 'County', 'Formated_date'], how='left')
 # left_on=['County', 'Submitted Date Time'], right_on=['County', 'Formated_date'], how='left')
 
 # check

@@ -131,6 +131,8 @@ for index, row in bigfoot_df[['State', 'County', 'Nearest Road', 'Nearest Town',
     new_cols['Formatted Address'].append(filtered_res[0]['formatted_address'])
 bigfoot_df = pd.concat([bigfoot_df, pd.DataFrame(new_cols)], axis=1)
 bigfoot_df.to_csv('dataset1/reports_task4-a_1.tsv', sep='\t', index=False)
+# bigfoot_df = pd.read_csv('dataset1/reports_task4-a_1.tsv', sep='\t', encoding='utf8')
+# bigfoot_df['Location'] = bigfoot_df['Location'].str.strip('()').apply(lambda x: tuple(float(e) for e in x.split(', ')) if type(x) == str else x)
 
 # ===================================
 # section 3: load national park data
@@ -148,6 +150,8 @@ for index, row in national_park_unique_df[['Park', 'State']].iterrows():
     new_cols_NP['Formatted Address NP'].append(res[0]['formatted_address'])
 national_park_unique_df = pd.concat([national_park_unique_df, pd.DataFrame(new_cols_NP)], axis=1)
 national_park_unique_df.to_csv('dataset1/national_park_task4.csv', index=False)
+# national_park_unique_df = pd.read_csv('dataset1/national_park_task4.csv', encoding='utf8')
+# national_park_unique_df['Location NP'] = national_park_unique_df['Location NP'].str.strip('()').apply(lambda x: tuple(float(e) for e in x.split(', ')) if type(x) == str else x)
 
 tree = cKDTree(np.array(national_park_unique_df['Location NP'].values.tolist()))
 bigfoot_clean_df = bigfoot_df[['Location']].dropna(subset=['Location']).copy()
@@ -155,10 +159,11 @@ distances, indices = tree.query(np.array(bigfoot_clean_df['Location'].values.tol
 bigfoot_clean_df['Nearest NP'] = national_park_unique_df.iloc[indices]['Park'].values
 bigfoot_df = bigfoot_df.join(bigfoot_clean_df['Nearest NP'], how='left')
 
+national_park_df = national_park_df.rename(columns={'Year': 'Fixed Year'})
 bigfoot_df = pd.merge(
     bigfoot_df,
-    national_park_df[['Park', 'Year', 'Recreation Visits']],
-    left_on=['Fixed Year', 'Nearest NP'], right_on=['Year', 'Park'], how='left')
-bigfoot_df.drop(columns=['Park','Year_y'], inplace=True)
+    national_park_df[['Park', 'Fixed Year', 'Recreation Visits']],
+    left_on=['Fixed Year', 'Nearest NP'], right_on=['Fixed Year', 'Park'], how='left')
+bigfoot_df.drop(columns=['Park'], inplace=True)
 bigfoot_df.rename(columns={'Recreation Visits': 'National Park Visitation Count'}, inplace=True)
 bigfoot_df.to_csv('dataset1/reports_task4-a_last.tsv', sep='\t', index=False)
