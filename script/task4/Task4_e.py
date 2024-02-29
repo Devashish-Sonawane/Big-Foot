@@ -10,13 +10,63 @@ tsv = pd.read_csv('data/WeatherEvents_Jan2016-Dec2022.csv')
 dfWeather = pd.DataFrame(tsv)
 
 newDates = []
-for time in dfWeather["StartTime(UTC)"]:
+newDates2 = []
+for (time, time2) in zip(dfWeather["StartTime(UTC)"], dfWeather["EndTime(UTC)"]):
     my_date = datetime.strptime(time, '%Y-%m-%d %H:%M:%S')
-    my_date = my_date.strftime("%Y-%m-%d")
+    my_date2 = datetime.strptime(time2, '%Y-%m-%d %H:%M:%S')
+    my_date = my_date.strftime("%Y-%m")
+    my_date2 = my_date2.strftime("%Y-%m")
     newDates.append(my_date)
+    newDates2.append(my_date2)
 
-dfWeather = dfWeather.assign(Formated_date=newDates)
-dfWeather = dfWeather.groupby(['State', 'County', 'Formated_date'], as_index=False).first()
+dfWeather = dfWeather.rename(columns={"StartTime(UTC)": "StartTime", "EndTime(UTC)": "EndTime"})
+dfWeather = dfWeather.assign(StartTime=newDates)
+dfWeather = dfWeather.assign(EndTime=newDates2)
+
+dfWeather = dfWeather.sort_values(['State', 'County', 'StartTime'])
+
+
+#SEVERITY MAX Appearances
+pre = ''
+severity = ['Light', 'Severe', 'Moderate', 'Heavy', 'UNK', 'Other']
+sevL = []
+remain = False
+count = [0,0,0,0,0,0]
+for sta, cou, date, s in zip(dfWeather['State'], dfWeather['County'], dfWeather['StartTime'], dfWeather["Severity"]):
+    if pre == (sta, cou, date):
+        if s == 'Light':
+            count[0] += 1
+        if s == 'Severe':
+            count[1] += 1
+        if s == 'Moderate':
+            count[2] += 1
+        if s == 'Heavy':
+            count[3] += 1
+        if s == 'UNK':
+            count[4] += 1
+        if s == 'Other':
+            count[5] += 1
+        remain = True
+    else:
+        pre = (sta, cou, date)
+        sevL.append(severity[pd.Series(count).idxmax()])
+        count = [0,0,0,0,0,0]
+        remain = False
+if remain:
+    sevL.append(severity[pd.Series(count).idxmax()])     
+sevL.pop(0)   
+
+index = -1
+pre = ''
+sevMax = []
+for sta, cou, date in zip(dfWeather['State'], dfWeather['County'], dfWeather['StartTime']):
+    if pre != (sta, cou, date):
+        index += 1
+        pre = (sta, cou, date)
+    sevMax.append(sevL[index])
+
+dfWeather = dfWeather.assign(Severity=sevMax)
+dfWeather = dfWeather.rename(columns={"Severity": "Severity Max"})
 
 # dfWeather.to_csv('dataset1/WeatherEvents_aggregated.csv', index=False)
 # dfWeather = pd.read_csv('dataset1/WeatherEvents_aggregated.csv', encoding='utf8')
@@ -30,11 +80,12 @@ dfWeather = dfWeather.groupby(['State', 'County', 'Formated_date'], as_index=Fal
 # len(set(df['County']) - (set(df['County']) & set(dfWeather['County'])))  # 326
 # len((set(df['County']) - (set(df['County']) & set(dfWeather['County']))) & set(dfWeather['City']))  # 38
 
+dfWeather = dfWeather.groupby(['State', 'County', 'StartTime'], as_index=False).first() #Keep this at the end
 dfWeather = dfWeather.rename(columns={'Year': 'Weather Year', 'State': 'State Short'})
 bigfoot_df = pd.merge(
     df,
     dfWeather,
-    left_on=['State Short', 'County', 'Submitted Date Time'], right_on=['State Short', 'County', 'Formated_date'], how='left')
+    left_on=['State Short', 'County', 'Submitted Date Time'], right_on=['State Short', 'County', 'StartTime'], how='left')
 # left_on=['County', 'Submitted Date Time'], right_on=['County', 'Formated_date'], how='left')
 
 # check
