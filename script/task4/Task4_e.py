@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 import us
 from datetime import datetime
@@ -5,6 +6,23 @@ from datetime import datetime
 tsv = pd.read_table('dataset1/reports_task4-d_last.tsv')
 df = pd.DataFrame(tsv)
 df['State Short'] = df['State'].apply(lambda x: us.states.lookup(x).abbr if type(x) != float else x)
+month_map = {
+    'January': 1,
+    'February': 2,
+    'March': 3,
+    'April': 4,
+    'May': 5,
+    'June': 6,
+    'July': 7,
+    'August': 8,
+    'September': 9,
+    'October': 10,
+    'November': 11,
+    'December': 12
+}
+
+df['Year-Month'] = df.apply(
+    lambda row: datetime(row['Fixed Year'], month_map[row['Month']], 1).strftime('%Y-%m') if type(row['Fixed Year']) == int and type(row['Month']) == str else np.nan, axis=1)
 
 tsv = pd.read_csv('data/WeatherEvents_Jan2016-Dec2022.csv')
 dfWeather = pd.DataFrame(tsv)
@@ -25,13 +43,12 @@ dfWeather = dfWeather.assign(EndTime=newDates2)
 
 dfWeather = dfWeather.sort_values(['State', 'County', 'StartTime'])
 
-
-#SEVERITY MAX Appearances
+# SEVERITY MAX Appearances
 pre = ''
 severity = ['Light', 'Severe', 'Moderate', 'Heavy', 'UNK', 'Other']
 sevL = []
 remain = False
-count = [0,0,0,0,0,0]
+count = [0, 0, 0, 0, 0, 0]
 for sta, cou, date, s in zip(dfWeather['State'], dfWeather['County'], dfWeather['StartTime'], dfWeather["Severity"]):
     if pre == (sta, cou, date):
         if s == 'Light':
@@ -50,11 +67,11 @@ for sta, cou, date, s in zip(dfWeather['State'], dfWeather['County'], dfWeather[
     else:
         pre = (sta, cou, date)
         sevL.append(severity[pd.Series(count).idxmax()])
-        count = [0,0,0,0,0,0]
+        count = [0, 0, 0, 0, 0, 0]
         remain = False
 if remain:
-    sevL.append(severity[pd.Series(count).idxmax()])     
-sevL.pop(0)   
+    sevL.append(severity[pd.Series(count).idxmax()])
+sevL.pop(0)
 
 index = -1
 pre = ''
@@ -71,6 +88,10 @@ dfWeather = dfWeather.rename(columns={"Severity": "Severity Max"})
 # dfWeather.to_csv('dataset1/WeatherEvents_aggregated.csv', index=False)
 # dfWeather = pd.read_csv('dataset1/WeatherEvents_aggregated.csv', encoding='utf8')
 
+type_count_df = dfWeather.groupby(['State', 'County', 'StartTime'])['Type'].value_counts().rename('Type Count').reset_index()
+type_count_df = type_count_df.sort_values('Type Count', ascending=False).groupby(['State', 'County', 'StartTime']).head(1).reset_index().drop('Type Count', axis=1)
+avg_df = dfWeather.groupby(['State', 'County', 'StartTime'])['Precipitation(in)', 'LocationLat', 'LocationLng'].mean().reset_index()
+
 # check
 # len(set(df['County']))  # 1023
 # len(set(dfWeather['County']))  # 1100
@@ -80,12 +101,18 @@ dfWeather = dfWeather.rename(columns={"Severity": "Severity Max"})
 # len(set(df['County']) - (set(df['County']) & set(dfWeather['County'])))  # 326
 # len((set(df['County']) - (set(df['County']) & set(dfWeather['County']))) & set(dfWeather['City']))  # 38
 
-dfWeather = dfWeather.groupby(['State', 'County', 'StartTime'], as_index=False).first() #Keep this at the end
+dfWeather = dfWeather.groupby(['State', 'County', 'StartTime'], as_index=False).first()  # Keep this at the end
+dfWeather = dfWeather.drop(['Type', 'Precipitation(in)', 'LocationLat', 'LocationLng'], axis=1)
+len(dfWeather)  # 126018
+dfWeather = pd.merge(dfWeather, type_count_df, on=['State', 'County', 'StartTime'])
+dfWeather = pd.merge(dfWeather, avg_df, on=['State', 'County', 'StartTime'])
+len(dfWeather)  # 126018
+
 dfWeather = dfWeather.rename(columns={'Year': 'Weather Year', 'State': 'State Short'})
 bigfoot_df = pd.merge(
     df,
     dfWeather,
-    left_on=['State Short', 'County', 'Submitted Date Time'], right_on=['State Short', 'County', 'StartTime'], how='left')
+    left_on=['State Short', 'County', 'Year-Month'], right_on=['State Short', 'County', 'StartTime'], how='left')
 # left_on=['County', 'Submitted Date Time'], right_on=['County', 'Formated_date'], how='left')
 
 # check
