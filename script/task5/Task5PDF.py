@@ -6,17 +6,19 @@ import numpy as np
 
 def merge_pdf(tsv):
 
+    # Extract the content from the Population pdf dataset with tika
     tika.initVM()
     parsed = parser.from_file('data/population-density-data-table.pdf')
-
     x = parsed["content"]
+
+    # Remove the unwanted content. Only keep the values from the tables.
     start = [m.start() for m in re.finditer('Alabama', x)]
     end = [m.start() for m in re.finditer('United States', x)]
-
     data = ""
     for i in range(4):
         data += x[start[i]:end[i]]
 
+    # Clean the data to facilitate the creation of arrays and tables
     data = data.replace("\n\n", " ")
     data = data.replace("\n", " ")
     data = data.replace(",", "")
@@ -27,7 +29,9 @@ def merge_pdf(tsv):
     data = data.replace("West ", "West_")
     data = data.replace("Rhode ", "Rhode_")
     data = data.split(' ')
-    
+
+    # Create a List of Lists.
+    # Each list corresponds to a state and its census data for all decades available
     chunks = [data[x:x+10] for x in range(0, len(data)-1, 10)]
     complete = []
     for i in range(51):
@@ -47,14 +51,18 @@ def merge_pdf(tsv):
     #tsv = pd.read_table('dataset1/reports_task5.tsv', encoding='utf8')
     #df = pd.DataFrame(tsv)
 
+    # Create Census panda's DataFrame
     col = ['State', 'Fixed Year', 'State Resident Population', 'State Population Density', 'Census Rank']
     df2 = pd.DataFrame(complete, columns = col) 
 
+    # Merge the Census dataset with the bigfoot dataset (tsv).
+    # Merged done by comparing year and state
     bigfoot_df = pd.merge(
         tsv,
         df2[['State', 'Fixed Year', 'State Resident Population', 'State Population Density', 'Census Rank']],
         left_on=['State', 'Fixed Year'], right_on=['State', 'Fixed Year'], how='left')
 
+    # Return Merged dataset
     return bigfoot_df
 #bigfoot_df.to_csv('dataset1/reports_task5.tsv', sep="\t", index=False) 
 
