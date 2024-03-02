@@ -2,6 +2,7 @@ import pandas as pd
 
 def merge_txt(tsv):
 
+    # Alcohol dataset location
     input = 'data/pcyr1970-2021.txt'
 
     # This is location of data in original file
@@ -88,7 +89,7 @@ def merge_txt(tsv):
     # Filter rows based on the 'Type of beverage' column
     filtered_df = df[df['Type of beverage'] == 'All beverages']
 
-    # Drop the specified columns ('Gallons of beverage', 'Type of data source')
+    # Drop the specified columns 
     columns_to_drop = ['Gallons of beverage', 'Type of beverage', 'Type of data source', 'Time-varying alcohol by volume (ABV)']
     filtered_df = filtered_df.drop(columns=columns_to_drop)
 
@@ -100,9 +101,10 @@ def merge_txt(tsv):
                         'Gallons of ethanol per capita age 21 and older','Decile for per capita consumption age 21 and older',
                         'Gallons of ethanol derived from time-varying ABV']
     
-    
+    # Make column type to integer
     for col in colInt:
         merged_df[col] =  merged_df[col].astype(pd.Int64Dtype())
 
+    # Return merged dataset
     return merged_df
 
