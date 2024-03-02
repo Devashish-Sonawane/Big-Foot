@@ -3,7 +3,7 @@ import pandas as pd
 
 def merge_jpg(bfro_df):
     # Read BFRO and STATEMAMMAL TSV files
-    statemammal_df = pd.read_csv("dataset1/Task5_image_dataset.tsv", sep="\t")
+    statemammal_df = pd.read_csv("data/Task5_image_dataset.tsv", sep="\t")
 
     # Merge BFRO and STATEMAMMAL data on 'State' column
     merged_df = pd.merge(bfro_df, statemammal_df, on='State', how='left')
