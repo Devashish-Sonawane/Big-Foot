@@ -2,7 +2,6 @@ import re
 import tika
 from tika import parser
 import pandas as pd
-import numpy as np
 
 def merge_pdf(tsv):
 
