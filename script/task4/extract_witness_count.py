@@ -4,27 +4,30 @@ import re
 import random
 import pyperclip
 
-
+# A function to replace text in a DataFrame column using regex or plain text.
 def replace(df, replace_from, replace_to, reg=False):
     dfc = df.copy()
     for rf, rt in zip(replace_from, replace_to):
         dfc = dfc.str.replace(rf, rt, regex=reg)
     return dfc
 
-
+# Extracts an estimated witness count from a text description.
 def extract_witnesses_count(text, psn, ppl):
-    # for debug
+    # For debugging purposes, a flag to log random samples.
     # flag = random.random() < 0.01
     flag = False
     res = None
+    # Regex patterns to identify specific textual patterns regarding witness presence.
     no_head = r'^there\b(was|were|are|where)\b(no|none|nobody|not)\b'
     total_head = r'^((yes\b)?there\b(was\b|were\b|are\b|where\b)?|i was the only\b)?(a total of\b|just\b|only\b)?\d{1,2}\b'
     total_suffix = ['of us', 'all together', 'witnesses total']
-    # tokenize
+    # Tokenize the text to analyze.
     tokens = re.findall(r'\w+', text)
     s = tokens[0]
-    # main count
+    # Main logic to determine the witness count based on different textual cues.
     if bool(re.search(r'\b\d{1,2}\b', text)):
+        # Various conditions to parse the text and deduce the witness count.
+        # Detailed conditions omitted for brevity.
         if len(tokens) == 1:
             flag = False
             res = 1 + int(s)
@@ -57,6 +60,8 @@ def extract_witnesses_count(text, psn, ppl):
             if s == 'yes' and res == 1:
                 res = 2
     else:
+        # Fallback conditions when no direct numeric information is present.
+        # Detailed conditions omitted for brevity.
         if s in 'no none nobody nope not sorry'.split():
             res = 1
         elif s == 'many':
@@ -68,23 +73,26 @@ def extract_witnesses_count(text, psn, ppl):
                    )
             if s == 'yes' and res == 1:
                 res = 2
-    # output
+    # Debug output if the flag is set.
     if flag:
         print(res, '<===>', text)
     return res
 
-
+# A function to analyze the frequency of words or phrases within a DataFrame column.
 def wc(df, param='f'):
     if param == 'f':
+        # Counts the frequency of the first word in each entry and copies the result to clipboard.
         first_words = df.apply(lambda x: x.split()[0] if x.split() else '')
         first_words.value_counts().to_clipboard(index=True, header=False)
     elif param == 'a':
+        # Counts the frequency of all words across all entries and copies the result to clipboard.
         all_words = pd.Series(' '.join(df).split())
         all_words.value_counts().to_clipboard(index=True, header=False)
     elif param == 's':
+        # Sorts the entries and copies them to clipboard.
         df.sort_values().to_clipboard(index=False, header=False)
 
-
+# Calculates the percentage of entries in a series that match a given pattern.
 def percent(series, pattern):
     matches = series.str.contains(pattern).sum()
     total = len(series)
