@@ -32,7 +32,7 @@ Contains code to merge three datasets (census, alcohol, and animal sightings), w
   
   &emsp; -Task 4 must have been executed previously ('dataset1/reports_task4-e_last.tsv' must have been generated).
   
-  &emsp; -Task 5 scripts ('Task5TXT.py', 'Task5PDF.py', 'Task5JPG.py', and 'Task5Launch.py) must be located in a level higher than the 'dataset1' and 'data' folder ('Big-Foot' folder for this repository)
+  &emsp; -Task 5 scripts ('Task5TXT.py', 'Task5PDF.py', 'Task5JPG.py', and 'Task5Launch.py) must be located in a level higher than the 'dataset1' and &emsp;'data' folder ('Big-Foot' folder for this repository)
 
 #### Execution:
 ```shell
