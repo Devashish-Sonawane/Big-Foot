@@ -24,7 +24,7 @@ cd script/task3; python csv2tsv.py
 ## Task 5
 Contains code to merge three datasets (census, alcohol, and animal sightings), with bigfoot dataset.
 
-'Task_5-1.ipynb' is not needed for its execution but it explains how to merge the '.txt' dataset step by step (locally implemented code, do not execute, only for didactid purpose)
+'Task_5-1.ipynb' is not needed for its execution but it explains how to merge the '.txt' dataset step by step (locally implemented code, do not execute, only for didactic purpose)
 
 #### Requirements:
 
