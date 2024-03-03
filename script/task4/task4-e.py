@@ -97,7 +97,6 @@ for sta, cou, date in zip(dfWeather['State'], dfWeather['County'], dfWeather['St
         pre = (sta, cou, date)
     sevMax.append(sevL[index])
 dfWeather = dfWeather.assign(Severity=sevMax)
-dfWeather = dfWeather.rename(columns={"Severity": "Severity Max"})
 
 # dfWeather.to_csv('dataset1/WeatherEvents_aggregated.csv', index=False)
 # dfWeather = pd.read_csv('dataset1/WeatherEvents_aggregated.csv', encoding='utf8')
