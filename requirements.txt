@@ -1,2 +1,9 @@
-pandas==2.0.3
+pandas
 tika==2.6.0
+pyperclip
+python-dateutil
+googlemaps
+numpy
+scipy
+number-parser
+us
