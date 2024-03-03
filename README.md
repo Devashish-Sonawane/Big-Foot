@@ -1,4 +1,4 @@
-# Big-Foot-
+# Big-Foot
 This is a shared repository containing data from Big Foot Field Researchers Organization (BFRO).
 
 ---
@@ -15,9 +15,66 @@ pip install -r requirements.txt
 
 ## Task 3
 
+Contains code to convert the original data set, a csv file, to a tsv file
+
+#### Requirements:
+
+  &emsp; -need to place `reports.csv` in `data` directory
+
+#### Execution:
 ```shell
 cd script/task3; python csv2tsv.py
 ```
+
+#### Output:
+
+  &emsp; - `dataset1/reports.tsv`
+
+---
+
+## Task 4
+Contains codes for each task in Task 4 and manually written data for converting irregular year expression to formatted year.
+
+#### Requirements:
+
+  &emsp; -Task 3 must have been executed previously (`dataset1/reports.tsv` must have been generated).
+
+  &emsp; -`Query Builder for Public Use Statistics (1979 - Last Calendar Year).xlsx` must be located in the `data` folder (already present in this git's repository). This is the data about national park visitors counts.
+
+  &emsp; -`irregular_year.json` must be located in the `script/task4` folder (already present in this git's repository.
+
+  &emsp; -Set your google map API key into `task4-a.py:95`.
+
+  &emsp; -`extract_witness_count.py` must be located in the `script/task4` folder (already present in this git's repository.
+
+  &emsp; -`data/WeatherEvents_Jan2016-Dec2022.csv` must be located in the `data` folder (you need to download the data from https://www.kaggle.com/datasets/sobhanmoosavi/us-weather-events)
+  
+
+
+#### Execution:
+```shell
+python script/task4/task4-a.py
+python script/task4/task4-b.py
+python script/task4/task4-c.py
+python script/task4/task4-d.py
+python script/task4/task4-e.py
+```
+
+#### Output:
+  &emsp; -`dataset1/reports_task4-a_1.tsv` (intermediate, some location information are added)
+
+  &emsp; -`dataset1/national_park_task4.csv` (intermediate, national park location data)
+
+  &emsp; -`dataset1/reports_task4-a_last.tsv` (intermediate, final output of task4-a.py)
+
+  &emsp; -`dataset1/reports_task4-b_last.tsv` (intermediate, final output of task4-b.py)
+
+  &emsp; -`dataset1/reports_task4-c_last.tsv` (intermediate, final output of task4-c.py)
+
+  &emsp; -`dataset1/reports_task4-d_last.tsv` (intermediate, final output of task4-d.py)
+
+  &emsp; -`dataset1/reports_task4-e_last.tsv` (final output of task4-e.py and task4)
+
 
 ---
 
