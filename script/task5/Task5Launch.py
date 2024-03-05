@@ -1,7 +1,7 @@
 import pandas as pd
 from Task5TXT import *
 from Task5PDF import *
-from Task5JPG import *
+from Task5PNG import *
 
 if __name__ == "__main__":
 
@@ -12,7 +12,7 @@ if __name__ == "__main__":
     # Execute each Task 5 script sequentially, merging each dataset one after the other
     tsv = merge_txt(tsv)
     tsv = merge_pdf(tsv)
-    tsv = merge_jpg(tsv)
+    tsv = merge_png(tsv)
 
     # Creates a tsv with the new merged data
     tsv.to_csv('dataset1/reports_task5.tsv', sep="\t", index=False) 
