@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def merge_jpg(bfro_df):
+def merge_png(bfro_df):
     # Read BFRO and STATEMAMMAL TSV files
     statemammal_df = pd.read_csv("data/Task5_image_dataset.tsv", sep="\t")
 
