@@ -115,13 +115,10 @@ Contains codes for converting tsv file to JSON file
 
   &emsp; -aggregate-json folder must be created for the output
 
+  &emsp; -The folder ‘conf’ must be created
 
-Requirements:
+  &emsp; -In the conf folder the user should put the following files:‘colheaders.txt’ containing column headers,‘encoding.txt’ containing encodings 
 
-  &emsp; The folder ‘conf’ must be created
-  &emsp; In the conf folder the user should put the following files:
-  &emsp; ‘colheaders.txt’ containing column headers 
-  &emsp; ‘encoding.txt’ containing encodings
 
   
 #### Execution:
