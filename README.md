@@ -106,6 +106,21 @@ The state mammal data was extracted manually from the image dataset consisting o
 ---
 
 ## Task 6
+### Part 1
+
+Contains codes for converting tsv file to JSON file
+Requirements:
+  &emsp; Task 5 must have been executed previously (‘reports_task5.tsv’ must have been generated)
+
+### Part 2
+
+Contains code for splitting JSON file into chunks of 100
+
+### Part 3
+
+Contains code for displaying ...
+
+
 
 ---
 
