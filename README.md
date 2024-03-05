@@ -103,4 +103,25 @@ The state mammal data was extracted manually from the image dataset consisting o
 #### Output:
   &emsp; -'dataset1/reports_task5.tsv'
 
+---
+
 ## Task 6
+
+---
+
+## Task 7
+Contains codes for converting a bunch of JSON files into one TSV file.
+
+#### Requirements:
+
+  &emsp; -Task 5 must have been executed previously (`dataset1/reports_task5.tsv` must have been generated).
+
+  &emsp; -Task 6 must have been executed previously (`dataset1/json` directory must have a bunch of JSON files named like `chunkX.json`).
+
+#### Execution:
+```shell
+python script/task7/json2tsv.py
+```
+
+#### Output:
+  &emsp; -`dataset1/reports_task7.tsv`
