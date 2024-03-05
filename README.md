@@ -102,3 +102,5 @@ The state mammal data was extracted manually from the image dataset consisting o
 
 #### Output:
   &emsp; -'dataset1/reports_task5.tsv'
+
+## Task 6
