@@ -109,9 +109,15 @@ The state mammal data was extracted manually from the image dataset consisting o
 ### Part 1
 
 Contains codes for converting tsv file to JSON file
+#### Requirements:
+
+  &emsp; -Task 5 must have been executed previously (‘reports_task5.tsv’ must have been generated
+
+  &emsp; -aggregate-json folder must be created for the output
+
+
 Requirements:
-  &emsp; Task 5 must have been executed previously (‘reports_task5.tsv’ must have been generated
-  &emsp; aggregate-json folder must be created for the output
+
   &emsp; The folder ‘conf’ must be created
   &emsp; In the conf folder the user should put the following files:
   &emsp; ‘colheaders.txt’ containing column headers 
