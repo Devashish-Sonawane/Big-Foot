@@ -131,7 +131,10 @@ tsvtojson -t 5467\ task5.tsv -j aggregate-json/aggregate.json -c conf/colheaders
 
 ### Part 2
 
-Contains code for splitting JSON file into chunks of 100
+Contains code for splitting JSON file into chunks of 100 lines
+
+#### Execution:
+
 #### Output:
   &emsp; -4373 json chunks 
 
