@@ -43,7 +43,7 @@
         d3.csv("edit_result.csv", function (error, data) {
             if (error) throw error;
 
-            console.log(data); // Выводим данные в консоль для отладки
+            console.log(data); 
 
             var nodes = {},
                 matrix = [],
@@ -55,7 +55,7 @@
                 if (!(d.target in nodes)) nodes[d.target] = { name: d.target, index: n++ };
             });
 
-            console.log(nodes); // Выводим узлы в консоль для отладки
+            console.log(nodes); 
 
             // Construct a square matrix counting the ties.
             data.forEach(function (d) {
