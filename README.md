@@ -181,7 +181,7 @@ python script/extra-credit/clusterization.py
 Html file is transferred from extra-credit to the working directory for creating the template for the vusualization 
 
 ```shell
-cp /script/extra-credit/chord.html .
+cp script/extra-credit/chord.html .
 ```
 For visualization the python server is launched:
 
