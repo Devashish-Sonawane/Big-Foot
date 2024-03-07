@@ -167,3 +167,25 @@ python script/task7/json2tsv.py
 ---
 
 ## Extra credit task
+
+Creating html file `chord.html` 
+
+When creating the file in it was used d3.js code which builds the chord diagram based on the data of the file containing the information in the csv file with the columns : `x_coordinate`, `y_coordinate`, `similarity score`
+
+For transforming the file (which was in the previous step) was used the following Python code:
+
+```shell
+python script/extra-credit/clusterization.py
+```
+
+Html file is transferred from extra-credit to the working directory for creating the template for the vusualization 
+
+```shell
+cp /script/extra-credit/chord.html .
+```
+For visualization the python server is launched:
+
+```shell
+python -mhttp.server 8082
+```
+(this fires up a server on port 8082, so then visit http://localhost:8082/chord.html)
