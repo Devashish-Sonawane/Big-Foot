@@ -220,7 +220,8 @@ python -mhttp.server 8082
 #### Output:
   &emsp; Visualizations for the chunks of data (the ones from the json with all keys, the ones from the json with text keys replaced by "", the ones from the json with numerical keys replaced by "".
 
-  
+<img width="477" alt="Screenshot 2024-03-08 at 11 06 16 AM" src="https://github.com/Devashish-Sonawane/Big-Foot/assets/158105673/5aa26d93-91d7-4b7d-b65f-7ada404d8b86">
+
 
 ---
 
