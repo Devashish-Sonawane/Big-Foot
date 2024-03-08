@@ -110,6 +110,8 @@ The state mammal data was extracted manually from the image dataset consisting o
 Contains codes for converting tsv file to JSON file
 #### Requirements:
 
+  &emsp; -Etllib must be installed
+  
   &emsp; -Task 5 must have been executed previously (‘reports_task5.tsv’ must have been generated)
 
   &emsp; -aggregate-json folder must be created for the output
