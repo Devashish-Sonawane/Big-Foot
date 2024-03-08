@@ -85,7 +85,7 @@ Contains code to merge three datasets (population census, alcohol consumption, a
 
 #### Requirements:
 
-  &emsp; -The three alternative datasets must be located in the 'data' folder (already present in this git's repository.
+  &emsp; -The three alternative datasets must be located in the 'data' folder (already present in this git's repository).
   
   &emsp; -Task 4 must have been executed previously ('dataset1/reports_task4-e_last.tsv' must have been generated).
   
