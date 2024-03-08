@@ -293,7 +293,7 @@ python script/extra-credit/clusterization.py
 ```
 Note: it is important to incude the csv filename (e.g. jaccard.csv) in the 6th line of the clusterization.py script.
 
-Html file is transferred from extra-credit to the working directory for creating the template for the vusualization 
+Html file is transferred from extra-credit to the working directory for creating the template for the visualization 
 
 ```shell
 cp script/extra-credit/chord.html .
