@@ -98,7 +98,7 @@ python script/task5/Task5Launch.py
 To execute this task you only to execute 'Task5Launch.py', this program will be in charge of executing all the indivual scripts and merging them into an unique tsv. Execution must done from the same location as Task 5 scripts.
 
 #### Note:
-The state mammal data was extracted manually from the image dataset consisting of 73 state mammal images. A state mammal is the official mammal of a U.S. state as designated by a state's legislature. The 'state' and 'state mammal' data was extracted from the side information of the image dataset. The 'Foot size' data was manually looked up photo by photo, by searching corresponding mammals' description.
+The state mammal data was extracted manually from the image dataset consisting of 73 state mammal images. A state mammal is the official mammal of a U.S. state as designated by a state's legislature. The 'state' and 'state mammal' data was extracted from the side information of the image dataset. The 'Foot size' data was manually looked up photo by photo, by searching corresponding mammals' description. All the PNG images are stored in the folder 'state_mammal' in 'data' folder
 
 #### Output:
   &emsp; -'dataset1/reports_task5.tsv'
