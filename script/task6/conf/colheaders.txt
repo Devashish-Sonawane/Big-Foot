@@ -1,0 +1,75 @@
+﻿Report Type        
+Id        
+Class        
+Submitted Date        
+Headline        
+Year_x        
+Season        
+Month        
+State_x        
+County
+Location Details        
+Nearest Town        
+Nearest Road        
+Observed        
+Also Noticed        
+Other Witnesses        
+Other Stories        
+Time And Conditions        
+Environment        
+Follow-Up        
+Follow-Up Report        
+Date        
+Author        
+Media Source        
+Source Url        
+Media Issue        
+Observed.1        
+A & G References        
+Submitted Date Time        
+Submitted Year        
+Fixed Year        
+Location        
+State Short        
+Formatted Address        
+Nearest NP        
+National Park Visitation Count        
+Witness Count        
+Multiple Witnesses        
+BigFoot Hotspot        
+State_y        
+Formated_date        
+EventId        
+Type        
+Severity        
+StartTime(UTC)        
+EndTime(UTC)        
+Precipitation(in)        
+TimeZone        
+AirportCode        
+LocationLat        
+LocationLng        
+City        
+ZipCode        
+Year        
+State        
+STATE MAMMAL 1        
+YEAR PUBLISHED 1
+SIZE 1        
+STATE MAMMAL 2        
+YEAR PUBLISHED 2        
+SIZE 2        
+STATE MAMMAL 3        
+YEAR PUBLISHED 3        
+SIZE 3        
+STATE MAMMAL 4        
+YEAR PUBLISHED 4        
+SIZE 4        
+Gallons of ethanol (absolute alcohol)        
+Population (age 14 and older)        
+Gallons of ethanol per capita age 14 and older        
+Decile for per capita consumption age 14 and older        
+Population (age 21 and older)        
+Gallons of ethanol per capita age 21 and older        
+Decile for per capita consumption age 21 and older        
+Gallons of ethanol derived from time-varying ABV
