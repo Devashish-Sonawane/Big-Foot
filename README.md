@@ -156,8 +156,6 @@ sh split_files.sh aggregate-json
 
 ### Part 3
 
-
-
 For the part where it was asked to explore the generic features the visualizations were based on, the steps were the following:
 
 1. The specific script `script/task6/columns.py` was used to replace the columns in the original json file -  `dataset1/aggregate.json` wil just "" value. It is important to specify- which columns specifically would need to be replaced.
@@ -165,9 +163,19 @@ For the part where it was asked to explore the generic features the visualizatio
    It one case of getting rid of text columns the columns (...) were replaced, in the other case of getting rid of columns with numerical values, the columns such as "Precipitation(in)", "ZipCode" and "Population (age 21 and older)" were replaced.
 
    For the convenience, there are 2 scripts- `script/task6/replace-text-columns.py` replaces text columns with "", `script/task6/replace-numeric-columns.py` replaces numeric columns with "".
+   
+   The only thing left to implement this step is to specify the initial json (in which the keys (columns) will be replaced by "" and the name of the file which will be created as a json file with replaced columns (for the purpose of saving the initial data the program creates a new file with replaced columns, it does not owerwrites existing file) in lines 38 an 39 of the `script/task6/replace-text-columns.py` and `script/task6/replace-numeric-columns.py`.
+
+2. After getting 2 new jsons with replaced keys (columns), it is needed to divide them on chunks by repeating Part 2 of Task 6 (the previous part).
+   
+3. After that out of each set of chunks the first 100 were manually taken. 
+
 
 #### Output:
-  &emsp; -3 visualizations
+  &emsp; -3 set of chunks, one-from the json with all keys(columns), another-from the json with text columns replaced by "", and the third one-from the json with numeric columns replaced by ""
+
+### Part 4
+
 
 
 ---
