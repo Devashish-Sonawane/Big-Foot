@@ -229,11 +229,6 @@ python -mhttp.server 8082
 ```
 (this fires up a server on port 8082, so then visit http://localhost:8082/chord.html)
 
-The visualization should be similar to the following one in structure (this one specifically was based on the jaccard.csv file from the task 6, which was a result of calculation of Jaccard similarity measure using Tika Similarity
-
-!!!! PICTURE
-
-
 ---
 
 ## Work division
