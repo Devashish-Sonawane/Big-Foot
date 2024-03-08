@@ -144,7 +144,7 @@ To execute this task there are 2 files required: 'split_files.sh' and 'aggregate
 Before execution it is critically important to update the input file name in the line 7 of the 'split_files.sh' file. In addition, the user should manually create the folder named 'output' in the working directory (that's where all the chunks will go)
 
 #### Output:
-  &emsp; -`dataset1/aggregate.json/output'
+  &emsp; -`dataset1/aggregate.json/output`
 
 ### Part 3
 
