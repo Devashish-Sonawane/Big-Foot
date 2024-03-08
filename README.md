@@ -107,11 +107,10 @@ The state mammal data was extracted manually from the image dataset consisting o
 
 ## Task 6
 ### Part 1
-
 Contains codes for converting tsv file to JSON file
 #### Requirements:
 
-  &emsp; -Task 5 must have been executed previously (‘reports_task5.tsv’ must have been generated
+  &emsp; -Task 5 must have been executed previously (‘reports_task5.tsv’ must have been generated)
 
   &emsp; -aggregate-json folder must be created for the output
 
@@ -122,6 +121,11 @@ Contains codes for converting tsv file to JSON file
 
   
 #### Execution:
+
+In order not to duplicate column names when creating json it is important to copy the headers from the first row of tsv file to the 'colheaders.txt' file (which is used in the next step) and, after that, delete the first row.
+
+Tsv file ('reports_task5.tsv') was renamed to '5467 task5.tsv' (where 5467 is a number of rows after deletion of the first one) for the convinience.
+
 ```shell
 tsvtojson -t 5467\ task5.tsv -j aggregate-json/aggregate.json -c conf/colheaders.txt -o BFRO -e conf/encoding.txt -s 0.8 -v
 ```
@@ -134,6 +138,8 @@ tsvtojson -t 5467\ task5.tsv -j aggregate-json/aggregate.json -c conf/colheaders
 Contains code for splitting JSON file into chunks of 100 lines
 
 #### Execution:
+
+To execute this task there are 2 files required: 'split_files.sh' and 'aggreagate.json'
 
 #### Output:
   &emsp; -4373 json chunks 
@@ -172,16 +178,22 @@ Creating html file `chord.html`
 
 When creating the file in it was used d3.js code which builds the chord diagram based on the data of the file containing the information in the csv file with the columns : `x_coordinate`, `y_coordinate`, `similarity score`
 
+So, basically, it is possible to build chord diagram using files such as jaccard.csv, edit.csv, cosine.csv (which contained columns `x_coordinate`, `y_coordinate`, `similarity score`) from the task 6.
+
 For transforming the file (which was in the previous step) was used the following Python code:
 
 ```shell
 python script/extra-credit/clusterization.py
 ```
+Note: it is important to incude the csv filename (e.g. jaccard.csv) in the 6th line of the clusterization.py script.
 
 Html file is transferred from extra-credit to the working directory for creating the template for the vusualization 
 
 ```shell
 cp script/extra-credit/chord.html .
+
+Note: it is important to incude the csv filename (e.g. jaccard.csv) in the 43th line of the chord.html script.
+
 ```
 For visualization the python server is launched:
 
@@ -189,6 +201,10 @@ For visualization the python server is launched:
 python -mhttp.server 8082
 ```
 (this fires up a server on port 8082, so then visit http://localhost:8082/chord.html)
+
+The visualization should be similar to the following one in structure (this one specifically was based on the jaccard.csv file from the task 6, which was a result of calculation of Jaccard similarity measure using Tika Similarity
+
+!!!! PICTURE
 
 
 ---
