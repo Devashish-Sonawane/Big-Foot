@@ -189,3 +189,20 @@ For visualization the python server is launched:
 python -mhttp.server 8082
 ```
 (this fires up a server on port 8082, so then visit http://localhost:8082/chord.html)
+
+
+---
+
+## Work division
+
+Ariel Martinez: Task 4e, PDF dataset (task 5), conversion of txt dataset (.ipynb -> .py), help anyone with less programmong experience.
+
+a
+
+a
+
+a
+
+a
+
+---
