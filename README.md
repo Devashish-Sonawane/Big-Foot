@@ -183,7 +183,8 @@ git clone http://github.com/chrismattmann/tika-similarity
 ```
 2. After that it is crucial to make sure that the files from the git are in the working derectory.
 
-3. There are scripts : `script/task6/Jaccard.py`, `script/task6/Edit.py`, `script/task6/Cosine.py` which alost automate the visualization process, however, it is important to make sure that the paths to files from git (from the step 1) needed are all there. If all the paths and level transitions are handled correctly, the execution for the visualizations should be the following:
+3. Requirement: import "subprocess" module to python
+   There are scripts : `script/task6/Jaccard.py`, `script/task6/Edit.py`, `script/task6/Cosine.py` which alost automate the visualization process, however, it is important to make sure that the paths to files from git (from the step 1) needed are all there. If all the paths and level transitions are handled correctly, the execution for the visualizations should be the following:
 
 Jaccard:
 `script/task6/Jaccard.py`
