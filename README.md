@@ -195,7 +195,7 @@ python -mhttp.server 8082
 
 ## Work division
 
-Ariel Martinez: Task 4e, PDF dataset (task 5), conversion of txt dataset (.ipynb -> .py), help anyone with less programmong experience.
+Ariel Martinez: Task 4e, PDF dataset (task 5), conversion of txt dataset (.ipynb -> .py).
 
 a
 
