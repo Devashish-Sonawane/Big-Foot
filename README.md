@@ -139,7 +139,7 @@ Contains code for splitting JSON file into chunks of 100 lines
 
 #### Execution:
 
-To execute this task there are 2 files required: 'split_files.sh' and 'aggreagate.json'
+To execute this task there are 2 files required: 'split_files.sh' and 'aggregate.json'
 
 #### Output:
   &emsp; -4373 json chunks 
