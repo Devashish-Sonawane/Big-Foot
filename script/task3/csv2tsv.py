@@ -1,7 +1,7 @@
 import csv
 
-input_csv = "../../data/reports.csv"
-output_tsv = "../../dataset1/reports.tsv"
+input_csv = "data/reports.csv"
+output_tsv = "dataset1/reports.tsv"
 
 # open original csv
 with open(input_csv, 'r', newline='', encoding='utf-8') as csvfile:

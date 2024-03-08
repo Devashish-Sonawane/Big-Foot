@@ -23,7 +23,7 @@ Contains code to convert the original data set, a csv file, to a tsv file
 
 #### Execution:
 ```shell
-cd script/task3; python csv2tsv.py
+python script/task3/csv2tsv.py
 ```
 
 #### Output:
