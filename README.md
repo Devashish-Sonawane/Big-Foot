@@ -139,17 +139,33 @@ Contains code for splitting JSON file into chunks of 100 lines
 
 #### Execution:
 
-To execute this task there are 2 files required: 'split_files.sh' and 'aggregate.json'
+To execute this task there are 2 files required: `script/task6/split_files.sh` and `dataset/aggregate.json` (the output of part 1)
 
-Before execution it is critically important to update the input file name in the line 7 of the 'split_files.sh' file. In addition, the user should manually create the folder named 'output' in the working directory (that's where all the chunks will go)
+
+Before execution it is critically important to update the input file name in the line 7 of the 'split_files.sh' file. In addition, the user should manually create the folder named 'output' in the working directory (that's where all the chunks will go) and the folder `aggregate-json' and put the .json file which has to be divided into this folder.
+
+After that the only step left is the execution of the command:
+
+```shell
+sh split_files.sh aggregate-json
+```
 
 #### Output:
-  &emsp; -`dataset1/output`
-  Which is 4373 chunks (jsons) of the data, which will be used to create subsets for the part 3
+  &emsp; -`dataset1/output` 
+  Which is 4373 chunks (jsons) of the data, which will appear in the `output` folder (created manually before`, an those chunks will be used to create subsets for the part 3
 
 ### Part 3
 
-Contains code for displaying ...
+
+
+For the part where it was asked to explore the generic features the visualizations were based on, the steps were the following:
+
+1. The specific script `script/task6/columns.py` was used to replace the columns in the original json file -  `dataset1/aggregate.json` wil just "" value. It is important to specify- which columns specifically would need to be replaced.
+   
+   It one case of getting rid of text columns the columns (...) were replaced, in the other case of getting rid of columns with numerical values, the columns such as "Precipitation(in)", "ZipCode" and "Population (age 21 and older)" were replaced.
+
+   For the convenience, there are 2 scripts- script/task6/columns-text.py replaces text columns with "", script/task6/columns-numeric.py replaces numeric columns with "".
+
 #### Output:
   &emsp; -3 visualizations
 
