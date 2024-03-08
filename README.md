@@ -164,7 +164,7 @@ For the part where it was asked to explore the generic features the visualizatio
    
    It one case of getting rid of text columns the columns (...) were replaced, in the other case of getting rid of columns with numerical values, the columns such as "Precipitation(in)", "ZipCode" and "Population (age 21 and older)" were replaced.
 
-   For the convenience, there are 2 scripts- script/task6/columns-text.py replaces text columns with "", script/task6/columns-numeric.py replaces numeric columns with "".
+   For the convenience, there are 2 scripts- `script/task6/replace-text-columns.py` replaces text columns with "", `script/task6/replace-numeric-columns.py` replaces numeric columns with "".
 
 #### Output:
   &emsp; -3 visualizations
