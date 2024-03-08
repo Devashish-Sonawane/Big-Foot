@@ -197,12 +197,12 @@ python -mhttp.server 8082
 
 Ariel Martinez: Task 4e, PDF dataset (task 5), conversion of txt dataset (.ipynb -> .py).
 
-Kyosuke: task3, task4 a-e, task7.
+Kyosuke Chikamatsu: Task3, Task4 a-e, Task7.
 
-a
+Devashish Sonawane: TXT dataset (Task 5)
 
-a
+Willy Tang: PNG dataset (Task 5)
 
-a
+Ekaterina Shtyrkova: Task 6, Task 8
 
 ---
