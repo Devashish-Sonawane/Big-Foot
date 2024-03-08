@@ -172,9 +172,11 @@ For the part where it was asked to explore the generic features the visualizatio
 
 
 #### Output:
-  &emsp; -3 set of chunks, one-from the json with all keys(columns), another-from the json with text columns replaced by "", and the third one-from the json with numeric columns replaced by ""
+  &emsp; 3 json files ((Upload + name)) + 3 sets of 100 chunks, one-from the json with all keys(columns), another-from the json with text columns replaced by "", and the third one-from the json with numeric columns replaced by "" 
 
 ### Part 4
+
+
 
 
 
