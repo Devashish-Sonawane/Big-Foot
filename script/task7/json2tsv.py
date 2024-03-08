@@ -2,7 +2,7 @@ import json
 import pandas as pd
 
 # Set the directory path where the JSON files are stored
-dir_path = 'dataset1/json/'
+dir_path = 'dataset1/output/'
 concatenated_content = ''
 # Loop through each JSON file by number and concatenate their content
 for i in range(1, 4374):

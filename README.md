@@ -162,7 +162,7 @@ Contains codes for converting a bunch of JSON files into one TSV file.
 
   &emsp; -Task 5 must have been executed previously (`dataset1/reports_task5.tsv` must have been generated).
 
-  &emsp; -Task 6 must have been executed previously (`dataset1/json` directory must have a bunch of JSON files named like `chunkX.json`).
+  &emsp; -Task 6 must have been executed previously (`dataset1/output` directory must have a bunch of JSON files named like `chunkX.json`).
 
 #### Execution:
 ```shell
