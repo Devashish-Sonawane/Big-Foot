@@ -284,7 +284,7 @@ Creating html file `chord.html`
 
 When creating the file in it was used d3.js code which builds the chord diagram based on the data of the file containing the information in the csv file with the columns : `x_coordinate`, `y_coordinate`, `similarity score`
 
-So, basically, it is possible to build chord diagram using files such as jaccard.csv, edit.csv, cosine.csv (which contained columns `x_coordinate`, `y_coordinate`, `similarity score`) from the task 6.
+So, basically, it is possible to build chord diagram using files such as jaccard.csv, edit.csv, cosine.csv (which contained columns `x_coordinate`, `y_coordinate`, `similarity score`) from the task 6 as an input.
 
 For transforming the file (which was in the previous step) was used the following Python code:
 
@@ -309,7 +309,7 @@ python -mhttp.server 8082
 (this fires up a server on port 8082, so then visit http://localhost:8082/chord.html)
 
 #### Output:
-  &emsp; Should prosuce similar visualization:
+  &emsp; Should produce similar visualization:
   
 <img width="772" alt="Screenshot 2024-03-08 at 11 14 47 AM" src="https://github.com/Devashish-Sonawane/Big-Foot/assets/158105673/37d5e82d-12ba-445e-ba56-b7e486de237a">
 
