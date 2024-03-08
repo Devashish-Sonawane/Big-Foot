@@ -275,7 +275,7 @@ python -mhttp.server 8082
 
 
 #### Output:
-  &emsp; Chord diagram (this fires up a server on port 8082, so then visit http://localhost:8082/chord.html)
+  &emsp; Chord diagram (this fires up a server on port 8082, so then visit http://localhost:8082/chord.html) looking similar to the one in `viz/ec.jpg`
   
 
 
