@@ -93,7 +93,7 @@ Contains code to merge three datasets (population census, alcohol consumption, a
 
 #### Execution:
 ```shell
-python Task5Launch.py    
+python script/task5/Task5Launch.py    
 ```
 To execute this task you only to execute 'Task5Launch.py', this program will be in charge of executing all the indivual scripts and merging them into an unique tsv. Execution must done from the same location as Task 5 scripts.
 
