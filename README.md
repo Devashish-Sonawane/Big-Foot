@@ -195,11 +195,11 @@ python -mhttp.server 8082
 
 ## Work division
 
-Ariel Martinez: Task 4e, PDF dataset (task 5), conversion of txt dataset (.ipynb -> .py).
+Ariel Martinez: Task 4e, PDF dataset (task 5), conversion of .ipynb to .py
 
-Kyosuke Chikamatsu: Task3, Task4 a-e, Task7.
+Kyosuke Chikamatsu: Task3, Task4 a-e, Task7
 
-Devashish Sonawane: TXT dataset (Task 5)
+Devashish Sonawane: TXT dataset - Alcohol Consumption (Task 5)
 
 Willy Tang: PNG dataset (Task 5)
 
