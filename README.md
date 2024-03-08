@@ -215,6 +215,8 @@ python -mhttp.server 8082
 ```
 (this fires up a server on port 8082, so then visit http://localhost:8082/levelCluster-d3.html)
 
+#### Output:
+  &emsp; Visualizations for different chunks of data 
 
 ---
 
