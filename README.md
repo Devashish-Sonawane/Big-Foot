@@ -79,7 +79,7 @@ python script/task4/task4-e.py
 ---
 
 ## Task 5
-Contains code to merge three datasets (census, alcohol, and state mammals), with bigfoot dataset.
+Contains code to merge three datasets (population census, alcohol consumption, and state mammals), with bigfoot dataset.
 
 'Task_5-1.ipynb' is not needed for its execution but it explains how to merge the '.txt' dataset step by step (locally implemented code, do not execute, only for didactic purpose)
 
