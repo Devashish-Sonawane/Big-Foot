@@ -176,8 +176,44 @@ For the part where it was asked to explore the generic features the visualizatio
 
 ### Part 4
 
+1. First step is to clone the git which would bring in files for the visualizations
+   
+```shell
+git clone http://github.com/chrismattmann/tika-similarity
+```
+2. After that it is crucial to make sure that the files from the git are in the working derectory.
+
+3. There are scripts : `script/task6/Jaccard.py`, `script/task6/Edit.py`, `script/task6/Cosine.py` which alost automate the visualization process, however, it is important to make sure that the paths to files from git (from the step 1) needed are all there. If all the paths and level transitions are handled correctly, the execution for the visualizations should be the following:
+
+Jaccard:
+`script/task6/Jaccard.py`
+
+```shell
+python -mhttp.server 8082
+```
+(this fires up a server on port 8082, so then visit http://localhost:8082/levelCluster-d3.html)
+
+Edit Distance:
 
 
+```shell
+`script/task6/Edit.py`
+```
+
+```shell
+python -mhttp.server 8082
+```
+(this fires up a server on port 8082, so then visit http://localhost:8082/levelCluster-d3.html)
+
+Cosine:
+```shell
+`script/task6/Cosine.py`
+```
+
+```shell
+python -mhttp.server 8082
+```
+(this fires up a server on port 8082, so then visit http://localhost:8082/levelCluster-d3.ht
 
 
 ---
