@@ -220,41 +220,7 @@ python -mhttp.server 8082
 (this fires up a server on port 8082, so then visit http://localhost:8082/levelCluster-d3.html)
 
 #### Output:
-  &emsp; Visualizations for the chunks of data (the ones from the json with all keys, the ones from the json with text keys replaced by "", the ones from the json with numerical keys replaced by "", based on the differences in which we can make conclusions on the features used by different measures (see final report)
-
-Visualizations for the json chunks with all keys:
-
-Jaccard
-<img width="477" alt="Screenshot 2024-03-08 at 11 06 16 AM" src="https://github.com/Devashish-Sonawane/Big-Foot/assets/158105673/5aa26d93-91d7-4b7d-b65f-7ada404d8b86">
-
-Edit 
-<img width="570" alt="Screenshot 2024-03-08 at 4 26 58 AM" src="https://github.com/Devashish-Sonawane/Big-Foot/assets/158105673/94c8217a-ebe1-4717-8198-daa03d91ce56">
-
-Cosine
-<img width="487" alt="Screenshot 2024-03-08 at 5 31 13 AM" src="https://github.com/Devashish-Sonawane/Big-Foot/assets/158105673/168020c4-e304-4ae7-9718-140a523e9d1c">
-
-
-Visualizations for the json chunks with text keys deleted:
-
-Jaccard
-<img width="497" alt="Screenshot 2024-03-08 at 5 11 45 AM-jaccard-withoutcolumns" src="https://github.com/Devashish-Sonawane/Big-Foot/assets/158105673/3bdbea3d-a736-43b1-a154-a0d294187b72">
-
-Edit
-<img width="485" alt="Screenshot 2024-03-08 at 4 41 44 AM-edit-without-columns" src="https://github.com/Devashish-Sonawane/Big-Foot/assets/158105673/a43cc847-82d6-4024-80f3-6511fb697188">
-
-Cosine
-<img width="511" alt="Screenshot 2024-03-08 at 5 58 02 AM" src="https://github.com/Devashish-Sonawane/Big-Foot/assets/158105673/5fb110a0-13a1-4a71-8189-8ff55fe79a35">
-
-Visualizations for the json chunks with numerical keys deleted:
-
-Jaccard
-<img width="398" alt="Screenshot 2024-03-08 at 11 11 15 AM" src="https://github.com/Devashish-Sonawane/Big-Foot/assets/158105673/0a8cc195-20eb-4f69-b6b0-4605e4b10476">
-
-Edit
-<img width="470" alt="Screenshot 2024-03-08 at 11 11 59 AM" src="https://github.com/Devashish-Sonawane/Big-Foot/assets/158105673/c7de85a1-1415-4e31-acb2-c5880d9bff26">
-
-Cosine
-<img width="319" alt="Screenshot 2024-03-08 at 11 12 43 AM" src="https://github.com/Devashish-Sonawane/Big-Foot/assets/158105673/3cb1283a-667a-4d9d-b9d7-dae560e3c1b4">
+  &emsp; Distance measure visualizations for the chunks of data (the ones from the json with all keys, the ones from the json with text keys replaced by "", the ones from the json with numerical keys replaced by "", based on the differences in which we can make conclusions on the features used by different measures (see final report)
 
 
 ---
@@ -306,12 +272,12 @@ For visualization the python server is launched:
 ```shell
 python -mhttp.server 8082
 ```
-(this fires up a server on port 8082, so then visit http://localhost:8082/chord.html)
+
 
 #### Output:
-  &emsp; Should produce similar visualization:
+  &emsp; Chord diagram (this fires up a server on port 8082, so then visit http://localhost:8082/chord.html)
   
-<img width="772" alt="Screenshot 2024-03-08 at 11 14 47 AM" src="https://github.com/Devashish-Sonawane/Big-Foot/assets/158105673/37d5e82d-12ba-445e-ba56-b7e486de237a">
+
 
 
 ---
