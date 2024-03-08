@@ -118,7 +118,7 @@ Contains codes for converting tsv file to JSON file
 
   &emsp; -In the conf folder the user should put the following files:‘colheaders.txt’ containing column headers,‘encoding.txt’ containing encodings 
 
-
+  the conf folder for the given data can be found: `scripts/task6/conf`
   
 #### Execution:
 
@@ -160,19 +160,19 @@ For the part where it was asked to explore the generic features the visualizatio
 
 1. The specific script `script/task6/columns.py` was used to replace the columns in the original json file -  `dataset1/aggregate.json` wil just "" value. It is important to specify- which columns specifically would need to be replaced.
    
-   It one case of getting rid of text columns the columns (...) were replaced, in the other case of getting rid of columns with numerical values, the columns such as "Precipitation(in)", "ZipCode" and "Population (age 21 and older)" were replaced.
+   It one case of getting rid of text columns the columns such as "City","MAMMAL 1", "Follow-up: were replaced, in the other case of getting rid of columns with numerical values, the columns such as "Precipitation(in)", "ZipCode" and "Population (age 21 and older)" were replaced.
 
    For the convenience, there are 2 scripts- `script/task6/replace-text-columns.py` replaces text columns with "", `script/task6/replace-numeric-columns.py` replaces numeric columns with "".
    
    The only thing left to implement this step is to specify the initial json (in which the keys (columns) will be replaced by "" and the name of the file which will be created as a json file with replaced columns (for the purpose of saving the initial data the program creates a new file with replaced columns, it does not owerwrites existing file) in lines 38 an 39 of the `script/task6/replace-text-columns.py` and `script/task6/replace-numeric-columns.py`.
 
-2. After getting 2 new jsons with replaced keys (columns), it is needed to divide them on chunks by repeating Part 2 of Task 6 (the previous part).
+2. After getting 2 new jsons with replaced keys (columns), it is needed to divide them onto chunks by repeating Part 2 of Task 6 (the previous part).
    
-3. After that out of each set of chunks the first 100 were manually taken. 
+3. After that out of each set of chunks the first 100 were manually taken for the part 4. (It is critically important to take the same-numbered chunks since part 4 should compare the results for those chunks for the 3 visualizations, an we need them to correspond to the same observations) 
 
 
 #### Output:
-  &emsp; 3 json files ((Upload + name)) + 3 sets of 100 chunks, one-from the json with all keys(columns), another-from the json with text columns replaced by "", and the third one-from the json with numeric columns replaced by "" 
+  &emsp; 3 json files + 3 sets of 100 chunks, one-from the json with all keys(columns), another-from the json with text columns replaced by "", and the third one-from the json with numeric columns replaced by "" 
 
 ### Part 4
 
@@ -183,8 +183,9 @@ git clone http://github.com/chrismattmann/tika-similarity
 ```
 2. After that it is crucial to make sure that the files from the git are in the working derectory.
 
-3. Requirement: import "subprocess" module to python
-   There are scripts : `script/task6/Jaccard.py`, `script/task6/Edit.py`, `script/task6/Cosine.py` which alost automate the visualization process, however, it is important to make sure that the paths to files from git (from the step 1) needed are all there. If all the paths and level transitions are handled correctly, the execution for the visualizations should be the following:
+3. Requirements: import "subprocess" module to python, latest version of editdistance installed
+   
+   There are scripts : `script/task6/Jaccard.py`, `script/task6/Edit.py`, `script/task6/Cosine.py` which alost automate the visualization process, however, it is important to make sure that the paths to files from git (from the step 1) needed are all there. If all the paths and level transitions are handled correctly, the execution for the visualizations should be reduced to the following:
 
 Jaccard:
 `script/task6/Jaccard.py`
@@ -217,7 +218,9 @@ python -mhttp.server 8082
 (this fires up a server on port 8082, so then visit http://localhost:8082/levelCluster-d3.html)
 
 #### Output:
-  &emsp; Visualizations for different chunks of data 
+  &emsp; Visualizations for the chunks of data (the ones from the json with all keys, the ones from the json with text keys replaced by "", the ones from the json with numerical keys replaced by "".
+
+  
 
 ---
 
