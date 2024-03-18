@@ -1,8 +1,0 @@
-
-
-Weather Dataset: 
-		
-		https://www.kaggle.com/datasets/sobhanmoosavi/us-weather-events
-
-
-Since the file is over 1000MB in size (100MB) and causes storage problems in github, please use the link above to download the dataset from the webpage.
