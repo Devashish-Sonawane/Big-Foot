@@ -1,2 +1,7 @@
 pandas
 requests
+numpy
+torch
+diffusers
+nltk
+number_parser
