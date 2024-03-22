@@ -1,0 +1,11 @@
+services:
+  Im2txtRest:
+    image: uscdatascience/im2txt-rest-tika
+    build: ./Im2txtRest
+    ports:
+      - "8764:8764"
+  InceptionRest:
+    image: uscdatascience/inception-rest-tika
+    build: ./InceptionRest
+    ports:
+      - "8765:8764"
