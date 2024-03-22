@@ -2,7 +2,7 @@
 This is a shared repository containing data from Big Foot Field Researchers Organization (BFRO).
 
 ---
-## Instalation of required libraries
+## Installation of required libraries
 
 To install write in the command line (while in the same folder as requirements.txt):
 
@@ -13,7 +13,35 @@ pip install -r requirements.txt
 
 ---
 
-## Task 5
+## Task 5 
+
+#### Requirements:
+
+### How to run:
+- Run task5.ipynb in Google Colab using the GPU option. The script can be found under Assignment_2/Scripts/task5.
+- In order to run the script through Google Colab, the directory must be uploaded to Google Drive.
+
+### Notes on implememtion:
+- Image generation method: I used the diffusers StableDiffusionPipeline to generate the images.
+- Text columns I joined: Observed, Observed.1, Environment, Time And Conditions, Season, and Witness Count.
+  - The StableDiffusionPipeline only takes 77 tokens. For most rows, the above gives significantly more than 77 tokens;
+  however, in cases where the preprocessed text resulted in less than 77 tokens, I also added
+  Also Noticed, Headline, Time And Conditions, and Location Details to have text to generate the image.
+  - As mentioned, the StableDiffusionPipeline only takes 77 tokens. In order to select 77 tokens
+  appropriately I preprocess the text to remove punctuation, special characters, convert to lowercase,
+  and convert easy numbers to text using the number parser and in cases where it does not convert it
+  I take out multi-digit numbers as the StableDiffusionPipeline seems to separate each digit in
+  a number and count it as a separate token which led to a larger mismatch between my token count using
+  NLTK and the token count from the generator. There are still certain numbers from time objects left
+  I believe and a slight mismatch in token count for some rows but this allowed me to select the
+  most relevant tokens centering the description of BigFoot.
+- The Image Text I use as the image cpation is added in a column called "Image Text".
+- The local relative url for the image paths are added in a column "Image URL" to help keep track
+of which image belongs to which row. The images are also labeled image_{index}.png to keep track.
+
+### Output:
+- Dataset1/reports_v2_task5.tsv
+- Dataset1/Images
 
 ---
 
