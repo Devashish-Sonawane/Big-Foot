@@ -49,7 +49,7 @@ of which image belongs to which row. The images are also labeled image_{index}.p
 
 #### Requirements:
 
-- Task 5 must have been executed previously (`dataset1/XXXXX.tsv` and `dataset1/image/XXXX.jpg` must have been generated).
+- Task 5 must have been executed previously (`reports_v2_task5.tsv` and `dataset1/Images/image_XXXX.png` must have been generated).
 
 - Docker Desktop must have been installed and run previously (Please refer to https://docs.docker.com/desktop/install/mac-install/).
   Windows users need to install Linux distribution by using WSL as well (Please refer to https://learn.microsoft.com/ja-jp/windows/wsl/install).
@@ -90,7 +90,7 @@ python Scripts/task6/task6.py
 
 Ariel Martinez: 
 
-Kyosuke Chikamatsu: 
+Kyosuke Chikamatsu: Task6
 
 Devashish Sonawane: 
 
