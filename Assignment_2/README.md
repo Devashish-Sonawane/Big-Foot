@@ -82,12 +82,14 @@ python Scripts/task6/task6.py
 
 #### Requirements:
 
-- Install: Lucene-geo-gazetteer, Tika, Geotopic-mime and the Ner-model. (https://cwiki.apache.org/confluence/display/TIKA/GeoTopicParser)
+- Install: Tika, Lucene-geo-gazetteer, Geotopic-mime and the Ner-model.
+  (https://tika.apache.org/download.html)
+  (https://cwiki.apache.org/confluence/display/TIKA/GeoTopicParser) 
   
 - Code MUST be run in Python 2.7 (parser won't work correctly otherwise)
   
 - Do to complications during the parser instalation, code MUST be run in the same folder as the:
-  ner-model folder, tika server jar, tika nlp jar, tika client jar, and geotopic mime folder
+  tika server jar, tika nlp jar, tika client jar, ner-model folder, and geotopic mime folder
 
 - Recomended the use of Linux (or Windows Subsystem for Linux) for execution
 
