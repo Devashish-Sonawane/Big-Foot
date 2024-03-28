@@ -80,6 +80,37 @@ python Scripts/task6/task6.py
 
 ## Task 7
 
+#### Requirements:
+
+- Install: Lucene-geo-gazetteer, Tika, Geotopic-mime and the Ner-model. (https://cwiki.apache.org/confluence/display/TIKA/GeoTopicParser)
+  
+- Code MUST be run in Python 2.7 (parser won't work correctly otherwise)
+  
+- Do to complications during the parser instalation, code MUST be run in the same folder as the:
+  ner-model folder, tika server jar, tika nlp jar, tika client jar, and geotopic mime folder
+
+- Recomended the use of Linux (or Windows Subsystem for Linux) for execution
+
+
+#### Execution:
+- Please move to the root directory of this project folder at first. And be sure to follow the requirements.
+
+- Terminal 1:
+```shell
+lucene-geo-gazetteer -server
+```
+- Terminal 2:
+```shell
+java -classpath ner-model:tika-server-standard-2.9.1.jar:tika-parser-nlp-package-2.9.1.jar org.apache.tika.server.core.TikaServerCli
+```
+- Terminal 3:
+```shell
+python2 test.py
+```
+
+#### Output:
+- `Dataset1/reports_v2_task7.tsv`
+
 ---
 
 ## Task 8
@@ -88,7 +119,7 @@ python Scripts/task6/task6.py
 
 ## Work division
 
-Ariel Martinez: 
+Ariel Martinez: Task7
 
 Kyosuke Chikamatsu: Task6
 
