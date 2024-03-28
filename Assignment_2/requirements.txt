@@ -5,3 +5,4 @@ torch
 diffusers
 nltk
 number_parser
+tika
