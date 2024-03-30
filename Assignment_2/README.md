@@ -113,6 +113,15 @@ python2 test.py
 #### Output:
 - `Dataset1/reports_v2_task7.tsv`
 
+
+#### Additional analysis
+
+Only for didtactic purpose (Report): An additional file called "Analysis7.py" can be found in task7. The analysis generates the data generated to visualize numerically some correlations in the dataset (more info in the report).
+
+- Please move to the root directory of this project folder at first.
+- Tested in Python3
+
+
 ---
 
 ## Task 8
