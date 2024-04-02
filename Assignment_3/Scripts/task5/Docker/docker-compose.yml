@@ -16,11 +16,12 @@
 version: "2"
 services:
   memex-geoparser:
+    build: .
     image: nasajplmemex/geo-parser
     networks:
       - memex-network
     entrypoint:
-      - /home/Docker/entrypoint-geoparser.sh
+      - ./entrypoint-geoparser.sh
     ports:
       - "8983:8983"
       - "8000:8000"
