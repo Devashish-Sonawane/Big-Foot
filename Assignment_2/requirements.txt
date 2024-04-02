@@ -1,8 +1,9 @@
 pandas
 requests
 numpy
-torch
 diffusers
+torch
+diffusers[torch]
 nltk
 number_parser
 tika
