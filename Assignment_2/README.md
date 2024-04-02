@@ -15,14 +15,17 @@ pip install -r requirements.txt
 
 ## Task 5 
 
-#### Requirements:
-
-### How to run:
+#### Requirements & how to run:
 - Run task5.ipynb in Google Colab using the GPU option. The script can be found under Assignment_2/Scripts/task5.
-- In order to run the script through Google Colab, the directory must be uploaded to Google Drive.
+- In order to run the script through Google Colab, the directory must first be uploaded to the root 
+  directory of your Google Drive.
+- The Colab includes code to connect with the content of local drive. This code assumes the
+  name of the local drive is the standard "My Drive". If the root directory of your drive has a non-standard
+  name, please update the path to set the directory in drive accordingly.
 
-### Notes on implememtion:
+### Notes on implementation:
 - Image generation method: I used the diffusers StableDiffusionPipeline to generate the images.
+- Link to the model: https://huggingface.co/docs/diffusers/en/using-diffusers/img2img.
 - Text columns I joined: Observed, Observed.1, Environment, Time And Conditions, Season, and Witness Count.
   - The StableDiffusionPipeline only takes 77 tokens. For most rows, the above gives significantly more than 77 tokens;
   however, in cases where the preprocessed text resulted in less than 77 tokens, I also added
@@ -35,7 +38,7 @@ pip install -r requirements.txt
   NLTK and the token count from the generator. There are still certain numbers from time objects left
   I believe and a slight mismatch in token count for some rows but this allowed me to select the
   most relevant tokens centering the description of BigFoot.
-- The Image Text I use as the image cpation is added in a column called "Image Text".
+- The Image Text I use as the image caption to generate the image is added in a column called "Image Text".
 - The local relative url for the image paths are added in a column "Image URL" to help keep track
 of which image belongs to which row. The images are also labeled image_{index}.png to keep track.
 
@@ -140,6 +143,6 @@ Willy Tang:
 
 Ekaterina Shtyrkova: 
 
-Tomine Bergseth: 
+Tomine Bergseth: Task5
 
 ---
