@@ -160,3 +160,5 @@ cython_debug/
 .idea/
 
 Assignment_1/data/WeatherEvents_Jan2016-Dec2022.csv
+*.docx
+*.xlsx
