@@ -42,6 +42,15 @@ cd ..
 python Scripts/task5/ingest_BFdata.py
 ```
 
+#### Visualization:
+1. Access to http://localhost:8000/
+2. Click on Configure Index Tab
+3. Set Domain Name to `bigfoot_index`.
+4. Set Index Path to http://localhost:8983/solr/bigfoot/
+5. Click on add index
+6. Click on Database Icon Tab
+7. Click on GeoParse button, and then wait (takes ~10 minutes)
+8. Click on View button
 ---
 
 ## Work division
