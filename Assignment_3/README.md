@@ -13,6 +13,22 @@ pip install -r requirements.txt
 
 ---
 
+## Task 4
+
+```shell
+cd Scripts/task4
+IMAGE_DIR=./Images/ docker-compose up -d
+./smqtk_services.run_images.sh  --docker-network task4_imagespace-network --images ./Images/
+./enable-imagespace.sh
+```
+
+probably no need:
+docker network rm task4_imagespace-network
+./import-images.sh task4-imagespace-solr-1 imagespace ./Images
+
+
+---
+
 ## Task 5
 
 #### Requirements:
@@ -55,9 +71,9 @@ python Scripts/task5/ingest_BFdata.py
 
 ## Work division
 
-Ariel Martinez: Task7
+Ariel Martinez: 
 
-Kyosuke Chikamatsu: Task6
+Kyosuke Chikamatsu: 
 
 Devashish Sonawane: 
 
