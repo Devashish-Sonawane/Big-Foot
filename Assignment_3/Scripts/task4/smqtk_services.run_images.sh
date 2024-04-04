@@ -83,6 +83,8 @@ do
 done
 unset q trigger
 
+sleep 10
+
 # Create new tables in DB, pulling init scripts from SMQTK container
 echo "Creating required tables"
 docker exec -i ${DOCKER_POSTGRES} psql postgres postgres 1>/dev/null <<-EOSQL

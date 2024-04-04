@@ -27,6 +27,8 @@ services:
       - docker-entrypoint.sh
       - solr-precreate
       - imagespace
+    ports:
+      - "8983:8983"
   imagespace-girder:
     image: nasajplmemex/image_space
     networks:

@@ -25,20 +25,20 @@ shift
 # Wait for Solr container to return a 200
 until docker exec -it "$CONTAINER_NAME" \
              curl --location --write-out "%{http_code}" \
-             --silent "http://localhost:8983/solr" | grep -q "^200"; do
+             --silent "http://imagespace-solr:8983/solr" | grep -q "^200"; do
     sleep 1
 done;
 
 # Configure Solr fields
 docker exec -it "$CONTAINER_NAME" \
-       curl "http://localhost:8983/solr/$CORE_NAME/schema" \
+       curl "http://imagespace-solr:8983/solr/$CORE_NAME/schema" \
        -H 'Accept: application/json, text/plain, */*' \
        -H 'Content-Type: application/json;charset=utf-8' \
        --data '{"add-field":{"stored":"true","indexed":"true","name":"sha1sum_s_md","type":"string"}}' > /dev/null
 
 # Export UUIDs to a CSV file
 DATA_FILE=$(mktemp)
-NUM_CORES=$(python -c 'import multiprocessing as mp; print(mp.cpu_count())')
+NUM_CORES=$(python3 -c 'import multiprocessing as mp; print(mp.cpu_count())')
 
 # Format the CSV and replace top level image dir with /images
 # i.e. the image is $IMAGE_DIR/foo/bar/baz.png -> /images/foo/bar/baz.png
