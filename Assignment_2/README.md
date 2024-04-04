@@ -133,6 +133,7 @@ Only for didtactic purpose (Report): An additional file called "Analysis7.py" ca
 
 - Latest Version of Python (Currently Python 3.12.2)
 - Install: spaCy (https://spacy.io/usage)
+
   For Windows, macOS/OSX, and Linux:
   ```
   pip install -U pip setuptools wheel
