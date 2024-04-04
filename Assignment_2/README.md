@@ -129,6 +129,26 @@ Only for didtactic purpose (Report): An additional file called "Analysis7.py" ca
 
 ## Task 8
 
+### Requirements:
+
+- Latest Version of Python (Currently Python 3.12.2)
+- Install: spaCy (https://spacy.io/usage)
+  For Windows, macOS/OSX, and Linux:
+  ```
+  pip install -U pip setuptools wheel
+  pip install -U spacy
+  python -m spacy download en_core_web_sm
+  ```
+- Task 7 must be executed before executing task8.py
+
+### Execution:
+
+- Move to root directory of the project folder and ensure spaCy is successfully installed
+- Run task8.py
+
+### Output:
+
+- 'Dataset1/reports_v2_task8.tsv'
 ---
 
 ## Work division
@@ -137,11 +157,11 @@ Ariel Martinez: Task7
 
 Kyosuke Chikamatsu: Task6
 
-Devashish Sonawane: 
+Devashish Sonawane: Task 1, 2, 4, 8
 
 Willy Tang: 
 
-Ekaterina Shtyrkova: 
+Ekaterina Shtyrkova: Task 8
 
 Tomine Bergseth: Task5
 
