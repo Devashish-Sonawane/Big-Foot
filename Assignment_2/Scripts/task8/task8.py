@@ -6,7 +6,7 @@ from collections import defaultdict
 nlp = spacy.load("en_core_web_sm")
 beam_width = 16
 beam_density = 0.0001
-file_path = r"D:\Study\USC\DSCI 550\Big-Foot\Assignment_2\Dataset1\reports_v2_task7.tsv"
+file_path = r"Dataset1\reports_v2_task7.tsv"
 
 df = pd.read_csv(file_path, sep ="\t")
 
@@ -58,4 +58,4 @@ for index, row in df.iterrows():
     print(f"Finished row {index} at {time.strftime("%H:%M:%S", time.localtime())}")
 
 # Save the modified DataFrame
-df.to_csv(r"D:\Study\USC\DSCI 550\Big-Foot\Assignment_2\Dataset1\v2_task8.tsv", sep="\t", index=False)
+df.to_csv(r"Dataset1\reports_v2_task8.tsv", sep="\t", index=False)
