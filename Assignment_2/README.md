@@ -1,5 +1,5 @@
-# Big-Foot
-This is a shared repository containing data from Big Foot Field Researchers Organization (BFRO).
+# DSCI 550 Spring 2024 Assignment 2 (Team 9)
+This repository hosts the DSCI 550 Spring 2024 Assignment 2, focusing on analyzing Bigfoot sighting data from the Big Foot Field Researchers Organization (BFRO). The assignment encompasses tasks ranging from data preprocessing to image generation and geographic analysis, aiming to apply data science techniques on Bigfoot sightings. Instructions for each task, including environment setup, data processing, and analysis methods, are detailed within. Follow the steps outlined to explore the patterns and insights hidden in the BFRO data.
 
 ---
 ## Installation of required libraries
@@ -67,7 +67,7 @@ of which image belongs to which row. The images are also labeled image_{index}.p
 cd Scripts/task6/
 docker-compose up -d
 ```
-- if you succeed in the start-up, you see:
+- If you succeed in the start-up, you see:
   - http://localhost:8764/
   - http://localhost:8765/
 
@@ -146,11 +146,14 @@ Only for didtactic purpose (Report): An additional file called "Analysis7.py" ca
 ### Execution:
 
 - Move to root directory of the project folder and ensure spaCy is successfully installed
-- Run task8.py
+
+```shell
+python Scripts/task8/task8.py
+```
 
 ### Output:
 
-- 'Dataset1/reports_v2_task8.tsv'
+- `Dataset1/reports_v2_task8.tsv`
 ---
 
 ## Work division
