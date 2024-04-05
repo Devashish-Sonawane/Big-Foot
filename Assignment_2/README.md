@@ -111,7 +111,7 @@ java -classpath ner-model:tika-server-standard-2.9.1.jar:tika-parser-nlp-package
 ```
 - Terminal 3:
 ```shell
-python2 test.py
+python2 Scripts/task7/task7.py
 ```
 
 #### Output:
@@ -162,11 +162,11 @@ Ariel Martinez: Task7
 
 Kyosuke Chikamatsu: Task6
 
-Devashish Sonawane: Task 1, 2, 4, 8
+Devashish Sonawane: Task8
 
 Willy Tang: 
 
-Ekaterina Shtyrkova: Task 8
+Ekaterina Shtyrkova: Task8
 
 Tomine Bergseth: Task5
 
