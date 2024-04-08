@@ -49,7 +49,7 @@ services:
       - /deploy/entrypoint_imagecatdev.sh
     ports:
       - "8088:8080"
-      - "8081"
+      - "8081:8081"
       - "8888"
       - "8000"
       - "9241"
