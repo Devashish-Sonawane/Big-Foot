@@ -15,17 +15,57 @@ pip install -r requirements.txt
 
 ## Task 4
 
+Create new index
+
 ```shell
 cd Scripts/task4
 IMAGE_DIR=./Images/ docker-compose up -d
-./smqtk_services.run_images.sh  --docker-network task4_imagespace-network --images ./Images/
+./smqtk_services.run_images.sh  --docker-network task4_imagespace-network --images ./Images
 ./enable-imagespace.sh
 ```
 
-probably no need:
-docker network rm task4_imagespace-network
-./import-images.sh task4-imagespace-solr-1 imagespace ./Images
+Overwrite the index (add new images)
 
+```shell
+cd Scripts/task4
+docker stop smqtk-postgres smqtk-services
+docker rm smqtk-postgres smqtk-services
+docker stop $(docker ps -q --filter "name=task4")
+docker rm $(docker ps -a -q --filter "name=task4")
+docker network rm task4_imagespace-network
+IMAGE_DIR=./Images/ docker-compose up -d
+./smqtk_services.run_images.sh  --docker-network task4_imagespace-network --images ./Images
+./enable-imagespace.sh
+```
+
+Just stop
+
+```shell
+cd Scripts/task4
+docker stop smqtk-postgres smqtk-services
+docker stop $(docker ps -q --filter "name=task4")
+```
+
+Just restart
+
+```shell
+cd Scripts/task4
+docker start smqtk-postgres smqtk-services
+docker stop $(docker ps -q --filter "name=task4")
+docker rm $(docker ps -a -q --filter "name=task4")
+IMAGE_DIR=./Images/ docker-compose up -d
+```
+
+Get compressed imageCat index
+
+```shell
+cd Scripts/task4
+./get_compressed_index.sh
+```
+
+- http://localhost:8989/
+- http://localhost:8081/solr/
+- ./import-images.sh task4-imagespace-solr-1 imagespace ./Images
 
 ---
 
