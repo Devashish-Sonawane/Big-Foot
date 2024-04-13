@@ -13,6 +13,37 @@ pip install -r requirements.txt
 
 ---
 
+## Task 3
+
+run apache solr with docker container
+
+```shell
+cd Scripts/task3
+docker-compose up -d
+```
+
+If you successrully start it, you see
+- http://localhost:8983
+
+
+upload schemas and create json file to ingest into solr
+
+```shell
+python set_schema.py
+```
+
+ingest json data
+
+```shell
+./ingest-json.sh
+```
+
+#### sample query
+
+- http://localhost:8983/solr/bigfoot/select?q=*:*&wt=json&indent=true&rows=10
+
+---
+
 ## Task 4
 
 Create new index
