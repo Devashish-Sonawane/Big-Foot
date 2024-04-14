@@ -1,7 +1,8 @@
-# Big-Foot
-This is a shared repository containing data from Big Foot Field Researchers Organization (BFRO).
+# DSCI 550 Spring 2024 Assignment 3 (Team 9)
+This repository hosts the DSCI 550 Spring 2024 Assignment 3, ....
 
 ---
+
 ## Installation of required libraries
 
 To install write in the command line (while in the same folder as requirements.txt):
@@ -13,104 +14,156 @@ pip install -r requirements.txt
 
 ---
 
+## Docker Installation
+
+Task 3, 4 and 5 requirer Docker installation.
+- Docker Desktop must have been installed and run previously (Please refer to https://docs.docker.com/desktop/install/mac-install/).
+- Windows users need to install Linux distribution by using WSL as well (Please refer to https://learn.microsoft.com/ja-jp/windows/wsl/install).
+- In addition, Windows users need to have docker enable integration with the Linux distribution (Please check Settings/Resources/WSL integration on your Docker Desktop).
+- Windows users will execute Docker commands in your Linux distribution terminal. Mac users will execute Docker commands in your terminal.
+
+---
+
 ## Task 3
 
-run apache solr with docker container
+### Starting the Solr Container
+
+To start the Apache Solr container, navigate to the appropriate script directory and use Docker Compose to launch the service:
 
 ```shell
 cd Scripts/task3
 docker-compose up -d
 ```
 
-If you successrully start it, you see
+After successful startup, the Solr service will be available at:
 - http://localhost:8983
 
+### Setting up Solr Schema and Data Ingestion
 
-upload schemas and create json file to ingest into solr
+1. **Upload Schema**:
+   Set the schema for the Solr instance by executing the Python script:
 
-```shell
-python set_schema.py
-```
+   ```shell
+   python set_schema.py
+   ```
 
-ingest json data
+2. **Ingest JSON Data**:
+   Ingest data into Solr using the provided shell script:
 
-```shell
-./ingest-json.sh
-```
+   ```shell
+   ./ingest-json.sh
+   ```
 
-#### sample query
+3. **Compress Solr Index**:
+   Retrieve and compress the Solr index data:
 
-- http://localhost:8983/solr/bigfoot/select?q=*:*&wt=json&indent=true&rows=10
+   ```shell
+   ./get_compressed_index.sh
+   ```
+
+### Sample Queries
+
+Execute the following queries to interact with the Solr server:
+
+- Retrieve 10 documents from the dataset:
+  - http://localhost:8983/solr/bigfoot/select?q=*:*&wt=json&indent=true&rows=10
+
+- Get statistical data for `BF_Witness_Count`:
+  - http://localhost:8983/solr/bigfoot/select?q=*:*&rows=0&stats=true&stats.field=BF_Witness_Count
+
+- Filter documents by year and return specific fields (e.g., from 2016):
+  - http://localhost:8983/solr/bigfoot/select?q=*:*&fq=BF_Fixed_Year:2016&fl=BF_Id,BF_Class,BF_Headline
+
+- Calculate average witness count by state:
+  - [click here](http://localhost:8983/solr/bigfoot/select?q=*:*&rows=0&json.facet={categories:{type:terms,field:BF_State,facet:{average_wc:"avg(BF_Witness_Count)"}}})
 
 ---
 
 ## Task 4
 
-Create new index
+### Creating the Image Index
 
-```shell
-cd Scripts/task4
-IMAGE_DIR=./Images/ docker-compose up -d
-./smqtk_services.run_images.sh  --docker-network task4_imagespace-network --images ./Images
-./enable-imagespace.sh
-```
+To create a new image index, perform the following steps:
 
-Overwrite the index (add new images)
+- **Start the Docker Containers**:
+   Navigate to the script directory and start the required Docker services with the image directory set:
 
-```shell
-cd Scripts/task4
-docker stop smqtk-postgres smqtk-services
-docker rm smqtk-postgres smqtk-services
-docker stop $(docker ps -q --filter "name=task4")
-docker rm $(docker ps -a -q --filter "name=task4")
-docker network rm task4_imagespace-network
-IMAGE_DIR=./Images/ docker-compose up -d
-./smqtk_services.run_images.sh  --docker-network task4_imagespace-network --images ./Images
-./enable-imagespace.sh
-```
+   ```shell
+   cd Scripts/task4
+   IMAGE_DIR=./Images/ docker-compose up -d
+   ./smqtk_services.run_images.sh --docker-network task4_imagespace-network --images ./Images
+   ./enable-imagespace.sh
+   ```
 
-Just stop
+### Overwriting the Existing Index
 
-```shell
-cd Scripts/task4
-docker stop smqtk-postgres smqtk-services
-docker stop $(docker ps -q --filter "name=task4")
-```
+To overwrite the existing index with new images:
 
-Just restart
+1. **Stop and Remove Existing Containers**:
+   Stop the currently running containers and remove them to clear the previous state:
 
-```shell
-cd Scripts/task4
-docker start smqtk-postgres smqtk-services
-docker stop $(docker ps -q --filter "name=task4")
-docker rm $(docker ps -a -q --filter "name=task4")
-IMAGE_DIR=./Images/ docker-compose up -d
-```
+   ```shell
+   cd Scripts/task4
+   docker stop smqtk-postgres smqtk-services
+   docker rm smqtk-postgres smqtk-services
+   docker stop $(docker ps -q --filter "name=task4")
+   docker rm $(docker ps -a -q --filter "name=task4")
+   docker network rm task4_imagespace-network
+   ```
 
-Get compressed imageCat index
+2. **Recreate Containers with New Images**:
+   Restart the Docker services with the new image directory specified:
+
+   ```shell
+   IMAGE_DIR=./Images/ docker-compose up -d
+   ./smqtk_services.run_images.sh --docker-network task4_imagespace-network --images ./Images
+   ./enable-imagespace.sh
+   ```
+
+### Managing Docker Containers
+
+- **Stop Containers**:
+  To simply stop the Docker containers:
+
+  ```shell
+  cd Scripts/task4
+  docker stop smqtk-postgres smqtk-services
+  docker stop $(docker ps -q --filter "name=task4")
+  ```
+
+- **Restart Containers**:
+  To restart the Docker containers:
+
+  ```shell
+  cd Scripts/task4
+  docker start smqtk-postgres smqtk-services
+  docker stop $(docker ps -q --filter "name=task4")
+  docker rm $(docker ps -a -q --filter "name=task4")
+  IMAGE_DIR=./Images/ docker-compose up -d
+  ```
+
+### Retrieving Compressed Image Index
+
+To retrieve the compressed image index:
 
 ```shell
 cd Scripts/task4
 ./get_compressed_index.sh
 ```
 
-- http://localhost:8989/
-- http://localhost:8081/solr/
-- ./import-images.sh task4-imagespace-solr-1 imagespace ./Images
+### Access URLs
+
+The services can be accessed via the following URLs:
+
+- ImageSpace Interface: http://localhost:8989/
+- Solr Interface for ImageSpace: http://localhost:8081/solr/
+- Import Images to Solr: Execute `./import-images.sh task4-imagespace-solr-1 imagespace ./Images`
 
 ---
 
 ## Task 5
 
-#### Requirements:
-
-- Docker Desktop must have been installed and run previously (Please refer to https://docs.docker.com/desktop/install/mac-install/).
-  Windows users need to install Linux distribution by using WSL as well (Please refer to https://learn.microsoft.com/ja-jp/windows/wsl/install).
-  In addition, Windows users need to have docker enable integration with the Linux distribution (Please check Settings/Resources/WSL integration on your Docker Desktop).
-  Windows users will execute Docker commands in your Linux distribution terminal. Mac users will execute Docker commands in your terminal.
-
-#### GeoParser Server Start-up:
-- Windows users need to use your Linux Distribution (not PowerShell/Command Prompt). Mac users need to use your Terminal.
+### GeoParser Server Start-up:
 - Please move to the root directory of this project folder at first.
 ```shell
 cd Scripts/task5/Docker
@@ -123,13 +176,13 @@ cd ..
   - http://localhost:8000/
   - http://localhost:8983/solr/
 
-#### Ingestion:
+### Ingestion:
 - Please move to the root directory of this project folder at first.
 ```shell
 python Scripts/task5/ingest_BFdata.py
 ```
 
-#### Visualization:
+### Visualization:
 1. Access to http://localhost:8000/
 2. Click on Configure Index Tab
 3. Set Domain Name to `bigfoot_index`.
@@ -144,7 +197,7 @@ python Scripts/task5/ingest_BFdata.py
 
 Ariel Martinez: 
 
-Kyosuke Chikamatsu: 
+Kyosuke Chikamatsu: Task3, 4, 5
 
 Devashish Sonawane: 
 
