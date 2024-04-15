@@ -157,7 +157,6 @@ The services can be accessed via the following URLs:
 
 - ImageSpace Interface: http://localhost:8989/
 - Solr Interface for ImageSpace: http://localhost:8081/solr/
-- Import Images to Solr: Execute `./import-images.sh task4-imagespace-solr-1 imagespace ./Images`
 
 ---
 
