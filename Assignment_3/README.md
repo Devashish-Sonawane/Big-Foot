@@ -12,7 +12,17 @@ pip install -r requirements.txt
 'pip' must be previously installed.
 
 ---
+## Task 2
 
+## Visualization 1:
+- Navigate toBig-Foot\Assignment_3\Scripts\task1\task1_Bergseth.ipynb to run task_1_Bergseth.ipynb
+  to create aggregated  dataset and associated json objects for this visualization.
+- In the command line, navigate to the directory: cd Big-Foot\Assignment_3
+- Start a python server by typing this command: python -m http.server
+- If it doesn't open automatically, navigate to http://localhost:8000 or the url provided in the 
+  command line.
+- From the browser, navigate to Scripts/task2 and click on visualization_1.html to open and view the visualization.
+- 
 ## Task 3
 
 run apache solr with docker container
