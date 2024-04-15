@@ -14,7 +14,7 @@ pip install -r requirements.txt
 
 ## Docker Installation
 
-Task 3, 4 and 5 requirer Docker installation.
+Task 3, 4 and 5 require Docker installation.
 - Docker Desktop must have been installed and run previously (Please refer to https://docs.docker.com/desktop/install/mac-install/).
 - Windows users need to install Linux distribution by using WSL as well (Please refer to https://learn.microsoft.com/ja-jp/windows/wsl/install).
 - In addition, Windows users need to have docker enable integration with the Linux distribution (Please check Settings/Resources/WSL integration on your Docker Desktop).
