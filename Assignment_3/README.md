@@ -22,8 +22,8 @@ Task 3, 4 and 5 require Docker installation.
 
 ## Task 2
 
-## Visualization 1:
-- Navigate toBig-Foot\Assignment_3\Scripts\task1\task1_Bergseth.ipynb to run task_1_Bergseth.ipynb
+### Visualization 1:
+- Navigate to Big-Foot\Assignment_3\Scripts\task1\task1_Bergseth.ipynb to run task_1_Bergseth.ipynb
   to create aggregated  dataset and associated json objects for this visualization.
 - In the command line, navigate to the directory: cd Big-Foot\Assignment_3
 - Start a python server by typing this command: python -m http.server
