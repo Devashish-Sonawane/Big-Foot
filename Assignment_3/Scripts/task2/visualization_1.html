@@ -9,156 +9,195 @@
 <body>
     <div id="chart-container"></div>
 
+    <div id="buttons">
+        <button id="median-btn">Median</button>
+        <button id="mean-btn">Mean</button>
+        <button id="min-btn">Min</button>
+        <button id="max-btn">Max</button>
+    </div>
+
     <script>
         // Load JSON data
         d3.json("../../Dataset1/BFRO_vis_1.json").then(function(data) {
-            // Data processing
-            const parsedData = data.BFRO;
+            let parsedData = data.BFRO;
+            let statistic = 'Median'; // Default statistic
 
-            // Chart dimensions
-            const width = 800;
-            const height = 600;
-            const margin = { top: 50, right: 60, bottom: 50, left: 100 };
+            // Function to update chart based on selected statistic
+            function updateChart(newStatistic) {
+                statistic = newStatistic;
+                drawChart();
+            }
 
-            // Create SVG container
-            const svg = d3.select("#chart-container")
-                .append("svg")
-                .attr("width", width + margin.left + margin.right)
-                .attr("height", height + margin.top + margin.bottom)
-                .append("g")
-                .attr("transform", `translate(${margin.left},${margin.top})`);
+            // Function to draw the chart
+            function drawChart() {
+                // Remove any existing chart
+                d3.select("#chart-container svg").remove();
 
-            // Scales
-            const xScale = d3.scaleLinear()
-                .domain(d3.extent(parsedData, d => d.Year))
-                .range([0, width]);
+                // Chart dimensions
+                const width = 800;
+                const height = 600;
+                const margin = { top: 50, right: 60, bottom: 50, left: 100 };
 
-            const yScale = d3.scaleLinear()
-                .domain([0, d3.max(parsedData, d => Math.max(d.Non_Hotspots_Median, d.Hotspots_Median))])
-                .range([height, 0]);
+                // Create SVG container
+                const svg = d3.select("#chart-container")
+                    .append("svg")
+                    .attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom)
+                    .append("g")
+                    .attr("transform", `translate(${margin.left},${margin.top})`);
 
-            // Line generators
-            const lineNonHotspots = d3.line()
-                .x(d => xScale(d.Year))
-                .y(d => yScale(d.Non_Hotspots_Median));
+                // Scales
+                const xScale = d3.scaleLinear()
+                    .domain(d3.extent(parsedData, d => d.Year))
+                    .range([0, width]);
 
-            const lineHotspots = d3.line()
-                .x(d => xScale(d.Year))
-                .y(d => yScale(d.Hotspots_Median));
+                const yScale = d3.scaleLinear()
+                    .domain([0, d3.max(parsedData, d => Math.max(d['Non_Hotspots_' + statistic], d['Hotspots_' + statistic]))])
+                    .range([height, 0]);
 
-            // Draw lines
-            svg.append("path")
-                .datum(parsedData)
-                .attr("fill", "none")
-                .attr("stroke", "steelblue")
-                .attr("stroke-width", 2)
-                .attr("d", lineNonHotspots);
+                // Line generators
+                const lineNonHotspots = d3.line()
+                    .x(d => xScale(d.Year))
+                    .y(d => yScale(d['Non_Hotspots_' + statistic]));
 
-            svg.append("path")
-                .datum(parsedData)
-                .attr("fill", "none")
-                .attr("stroke", "orange")
-                .attr("stroke-width", 2)
-                .attr("d", lineHotspots);
+                const lineHotspots = d3.line()
+                    .x(d => xScale(d.Year))
+                    .y(d => yScale(d['Hotspots_' + statistic]));
 
-            // Add axes
-            svg.append("g")
-                .attr("transform", `translate(0,${height})`)
-                .call(d3.axisBottom(xScale).ticks(10).tickSizeOuter(0));
+                // Draw lines
+                svg.append("path")
+                    .datum(parsedData)
+                    .attr("fill", "none")
+                    .attr("stroke", "steelblue")
+                    .attr("stroke-width", 2)
+                    .attr("d", lineNonHotspots);
 
-            svg.append("g")
-                .call(d3.axisLeft(yScale));
+                svg.append("path")
+                    .datum(parsedData)
+                    .attr("fill", "none")
+                    .attr("stroke", "orange")
+                    .attr("stroke-width", 2)
+                    .attr("d", lineHotspots);
 
-            // Add axis labels
-            svg.append("text")
-                .attr("transform", `translate(${width / 2},${height + margin.top})`)
-                .style("text-anchor", "middle")
-                .text("Year");
+                // Add axes
+                svg.append("g")
+                    .attr("transform", `translate(0,${height})`)
+                    .call(d3.axisBottom(xScale).ticks(10).tickSizeOuter(0));
 
-            svg.append("text")
-                .attr("transform", "rotate(-90)")
-                .attr("y", 0 - margin.left)
-                .attr("x", 0 - (height / 2))
-                .attr("dy", "1em")
-                .style("text-anchor", "middle")
-                .text("National Park Visitation Count");
+                svg.append("g")
+                    .call(d3.axisLeft(yScale));
 
-            // Create interactive elements group
-            const interactiveElements = svg.append("g")
-                .attr("class", "interactive-elements");
+                // Add axis labels
+                svg.append("text")
+                    .attr("transform", `translate(${width / 2},${height + margin.top})`)
+                    .style("text-anchor", "middle")
+                    .text("Year");
 
-            // Define tooltip elements
-            const tooltip = interactiveElements.append("text")
-                .attr("class", "tooltip")
-                .attr("x", 10)
-                .attr("y", 10)
-                .style("opacity", 0); // Initially hidden
+                svg.append("text")
+                    .attr("transform", "rotate(-90)")
+                    .attr("y", 0 - margin.left)
+                    .attr("x", 0 - (height / 2))
+                    .attr("dy", "1em")
+                    .style("text-anchor", "middle")
+                    .text("National Park Visitation Count");
 
-            // Add lines' values to tooltip
-            const tooltipValues = interactiveElements.selectAll(".tooltip-value")
-                .data(["Year:", "Non-Hotspots Median:", "Hotspots Median:"])
-                .enter()
-                .append("text")
-                .attr("class", "tooltip-value")
-                .attr("x", 10)
-                .attr("y", (d, i) => 10 + (i + 1) * 15)
-                .style("opacity", 0);
+                // Create interactive elements group
+                const interactiveElements = svg.append("g")
+                    .attr("class", "interactive-elements");
 
-             // Add title
-            svg.append("text")
-                .attr("x", width / 2)
-                .attr("y", -margin.top / 2)
-                .attr("text-anchor", "middle")
-                .style("font-size", "1.5em")
-                .style("text-decoration", "underline")
-                .text("Nearest National Park Visitation Count for Hotspots vs. Non-Hotspots Over Time");
+                // Define tooltip elements
+                const tooltip = interactiveElements.append("text")
+                    .attr("class", "tooltip")
+                    .attr("x", 10)
+                    .attr("y", 10)
+                    .style("opacity", 0); // Initially hidden
 
-             // Add legend
-             const legend = svg.append("g")
-                .attr("class", "legend")
-                .attr("transform", `translate(${width - 120}, ${height - 70})`);
+                // Add lines' values to tooltip
+                const tooltipValues = interactiveElements.selectAll(".tooltip-value")
+                    .data(["Year:", "Non-Hotspots " + statistic + ":", "Hotspots " + statistic + ":"])
+                    .enter()
+                    .append("text")
+                    .attr("class", "tooltip-value")
+                    .attr("x", 10)
+                    .attr("y", (d, i) => 10 + (i + 1) * 15)
+                    .style("opacity", 0);
 
-            legend.append("circle")
-                .attr("cx", 0)
-                .attr("cy", 0)
-                .attr("r", 6)
-                .style("fill", "steelblue");
+                 // Add title
+                svg.append("text")
+                    .attr("x", width / 2)
+                    .attr("y", -margin.top / 2)
+                    .attr("text-anchor", "middle")
+                    .style("font-size", "1.5em")
+                    .style("text-decoration", "underline")
+                    .text("Nearest National Park Visitation Count for Hotspots vs. Non-Hotspots Over Time");
 
-            legend.append("text")
-                .attr("x", 10)
-                .attr("y", 5)
-                .text("Non-Hotspots");
+                 // Add legend
+                 const legend = svg.append("g")
+                    .attr("class", "legend")
+                    .attr("transform", `translate(${width - 80}, ${height - 45})`);
 
-            legend.append("circle")
-                .attr("cx", 0)
-                .attr("cy", 20)
-                .attr("r", 6)
-                .style("fill", "orange");
+                legend.append("circle")
+                    .attr("cx", 0)
+                    .attr("cy", 0)
+                    .attr("r", 6)
+                    .style("fill", "steelblue");
 
-            legend.append("text")
-                .attr("x", 10)
-                .attr("y", 25)
-                .text("Hotspots");
+                legend.append("text")
+                    .attr("x", 10)
+                    .attr("y", 5)
+                    .text("Non-Hotspots");
 
-            // Create event listeners for mouse movements
-            svg.on("mousemove", function(event) {
-                const mouseX = d3.pointer(event, this)[0]; // Get the x-coordinate of the mouse pointer
-                const year = Math.round(xScale.invert(mouseX)); // Find the corresponding year
-                const nonHotspotValue = parsedData.find(d => d.Year === year).Non_Hotspots_Median; // Get non-hotspot median value
-                const hotspotValue = parsedData.find(d => d.Year === year).Hotspots_Median; // Get hotspot median value
+                legend.append("circle")
+                    .attr("cx", 0)
+                    .attr("cy", 20)
+                    .attr("r", 6)
+                    .style("fill", "orange");
 
-                // Update tooltip text and position
-                tooltipValues.data([`Year: ${year}`, `Non-Hotspots Median: ${nonHotspotValue}`, `Hotspots Median: ${hotspotValue}`])
-                    .text(d => d)
-                    .style("opacity", 1); // Show tooltip
-                tooltip.attr("x", mouseX)
-                    .attr("y", Math.max(yScale(nonHotspotValue), yScale(hotspotValue)) + 10) // Position tooltip above the lines
-                    .style("opacity", 1); // Show tooltip
-            })
-            .on("mouseleave", function() {
-                tooltip.style("opacity", 0); // Hide tooltip when mouse leaves the chart
-                tooltipValues.style("opacity", 0); // Hide tooltip values
+                legend.append("text")
+                    .attr("x", 10)
+                    .attr("y", 25)
+                    .text("Hotspots");
+
+                // Create event listeners for mouse movements
+                svg.on("mousemove", function(event) {
+                    const mouseX = d3.pointer(event, this)[0]; // Get the x-coordinate of the mouse pointer
+                    const year = Math.round(xScale.invert(mouseX)); // Find the corresponding year
+                    const nonHotspotValue = parsedData.find(d => d.Year === year)['Non_Hotspots_' + statistic]; // Get non-hotspot statistic value
+                    const hotspotValue = parsedData.find(d => d.Year === year)['Hotspots_' + statistic]; // Get hotspot statistic value
+
+                    // Update tooltip text and position
+                    tooltipValues.data([`Year: ${year}`, `Non-Hotspots ${statistic}: ${nonHotspotValue}`, `Hotspots ${statistic}: ${hotspotValue}`])
+                        .text(d => d)
+                        .style("opacity", 1); // Show tooltip
+                    tooltip.attr("x", mouseX)
+                        .attr("y", Math.max(yScale(nonHotspotValue), yScale(hotspotValue)) + 10) // Position tooltip above the lines
+                        .style("opacity", 1); // Show tooltip
+                })
+                .on("mouseleave", function() {
+                    tooltip.style("opacity", 0); // Hide tooltip when mouse leaves the chart
+                    tooltipValues.style("opacity", 0); // Hide tooltip values
+                });
+            }
+
+            // Add event listeners to buttons
+            d3.select("#median-btn").on("click", function() {
+                updateChart("Median");
             });
+
+            d3.select("#mean-btn").on("click", function() {
+                updateChart("Mean");
+            });
+
+            d3.select("#min-btn").on("click", function() {
+                updateChart("Min");
+            });
+
+            d3.select("#max-btn").on("click", function() {
+                updateChart("Max");
+            });
+
+            // Initial draw
+            drawChart();
         }).catch(function(error) {
             console.error("Error loading data:", error);
         });
