@@ -23,13 +23,19 @@ Task 3, 4 and 5 require Docker installation.
 ## Task 2
 
 ### Visualization 1:
-- Navigate to Big-Foot\Assignment_3\Scripts\task1\task1_Bergseth.ipynb to run task_1_Bergseth.ipynb
-  to create aggregated  dataset and associated json objects for this visualization.
-- In the command line, navigate to the directory: cd Big-Foot\Assignment_3
+- Open Jupyter Notebook and navigate to Big-Foot\Assignment_3\Scripts\task1\task1_visualization1.ipynb. 
+- Click run all cells in task_1_visualization_1.ipynb to aggregate and get json objects for the first visualization
+  (the line chart).
+- To run locally, in the command line, navigate to the directory: cd Big-Foot\Assignment_3
 - Start a python server by typing this command: python -m http.server
 - If it doesn't open automatically, navigate to http://localhost:8000 or the url provided in the 
   command line.
 - From the browser, navigate to Scripts/task2 and click on visualization_1.html to open and view the visualization.
+- Alternatively, view the visualization on our visualization website.
+
+# Output:
+- Dataset1/BFRO_vis_1.json
+
 ## Task 3
 
 ### Starting the Solr Container
@@ -210,6 +216,6 @@ Willy Tang:
 
 Ekaterina Shtyrkova: 
 
-Tomine Bergseth: Task5
+Tomine Bergseth: Task 1 & 2, create website
 
 ---
