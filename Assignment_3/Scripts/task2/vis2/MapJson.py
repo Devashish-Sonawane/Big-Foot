@@ -1,7 +1,7 @@
 import pandas as pd
 import addfips
 
-tsv = pd.read_table('Assignment_3/reports_v3.tsv')
+tsv = pd.read_table('Data/reports_v3.tsv')
 df = pd.DataFrame(tsv)
 
 
