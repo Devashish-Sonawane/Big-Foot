@@ -37,7 +37,7 @@ Task 3, 4 and 5 require Docker installation.
 - Dataset1/BFRO_vis_1.json
 
 ### Visualization 2:
-- Execute MapJson.py in and navigate to Big-Foot\Assignment_3\Scripts\task1\vis2 to create a copy of the json used in this visualization. 
+- Execute MapJson.py in (Big-Foot\Assignment_3\Scripts\task1\vis2) from the Assignment_3 folder to create a copy of the json used in this visualization. 
 - visualization_2.html uses a embedded visualization stored in:
 
 https://observablehq.com/d/c6f9d60f9efa8eb3 
