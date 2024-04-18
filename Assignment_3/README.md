@@ -206,7 +206,7 @@ python Scripts/task5/ingest_BFdata.py
 
 ## Work division
 
-Ariel Martinez: 
+Ariel Martinez: Visualization 2
 
 Kyosuke Chikamatsu: Task3, 4, 5
 
