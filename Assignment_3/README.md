@@ -33,8 +33,17 @@ Task 3, 4 and 5 require Docker installation.
 - From the browser, navigate to Scripts/task2 and click on visualization_1.html to open and view the visualization.
 - Alternatively, view the visualization on our visualization website.
 
-# Output:
+#### Output:
 - Dataset1/BFRO_vis_1.json
+
+### Visualization 2:
+- Execute MapJson.py in and navigate to Big-Foot\Assignment_3\Scripts\task1\vis2 to create a copy of the json used in this visualization. 
+- visualization_2.html uses a embedded visualization stored in:
+
+https://observablehq.com/d/c6f9d60f9efa8eb3 
+
+#### Output:
+- sightsCounts.json
 
 ## Task 3
 
