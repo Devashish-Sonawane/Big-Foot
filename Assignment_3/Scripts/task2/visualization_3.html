@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Bubble Chart with Categories</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        .bubble {
+            stroke: #000;
+            stroke-width: 1px;
+        }
+        text {
+            font-size: 10px;
+            text-anchor: middle;
+            font-weight: bold;
+            fill: black;
+        }
+        .tab {
+            padding: 10px;
+            cursor: pointer;
+            background-color: #eee;
+            display: inline-block;
+        }
+        .tab:hover {
+            background-color: #ddd;
+        }
+        .active-tab {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+<div id="tabs">
+    <span class="tab active-tab" data-category="All">All</span>
+    <span class="tab" data-category="Nature">Nature</span>
+    <span class="tab" data-category="Creature">Creature</span>
+    <span class="tab" data-category="Vehicle">Vehicle</span>
+    <span class="tab" data-category="Tool">Tool</span>
+    <span class="tab" data-category="Other">Other</span>
+</div>
+<div id="chart"></div>
+
+<script>
+    const data = [
+        {name: "lakeside", count: 735, category: "Nature"},
+        {name: "valley", count: 631, category: "Nature"},
+        {name: "mountain bike", count: 546, category: "Vehicle"},
+        {name: "mountain tent", count: 405, category: "Tool"},
+        {name: "alp", count: 396, category: "Nature"},
+        {name: "worm fence", count: 389, category: "Other"},
+        {name: "stone wall", count: 367, category: "Nature"},
+        {name: "park bench", count: 308, category: "Other"},
+        {name: "gorilla", count: 274, category: "Creature"},
+        {name: "unicycle", count: 246, category: "Vehicle"},
+        {name: "cliff", count: 231, category: "Nature"},
+        {name: "gazelle", count: 228, category: "Creature"},
+        {name: "brown bear", count: 225, category: "Creature"},
+        {name: "sandbar", count: 221, category: "Nature"},
+        {name: "viaduct", count: 219, category: "Other"},
+        {name: "impala", count: 206, category: "Creature"},
+        {name: "barn", count: 189, category: "Other"},
+        {name: "pole", count: 169, category: "Other"},
+        {name: "American black bear", count: 158, category: "Creature"},
+        {name: "bison", count: 157, category: "Creature"},
+        {name: "trail bike", count: 150, category: "Vehicle"},
+        {name: "snowmobile", count: 149, category: "Vehicle"},
+        {name: "chain saw", count: 124, category: "Tool"},
+        {name: "hatchet", count: 123, category: "Tool"},
+        {name: "off-road bike", count: 115, category: "Vehicle"},
+        {name: "hammer", count: 114, category: "Tool"},
+        {name: "recumbent bike", count: 112, category: "Vehicle"},
+        {name: "shovel", count: 103, category: "Tool"},
+        {name: "pickup", count: 95, category: "Vehicle"},
+        {name: "rifle", count: 94, category: "Tool"},
+        {name: "jeep", count: 87, category: "Vehicle"},
+        {name: "beaver", count: 85, category: "Creature"},
+        {name: "prairie dog", count: 83, category: "Creature"},
+        {name: "dirt bike", count: 81, category: "Vehicle"},
+        {name: "sand bike", count: 79, category: "Vehicle"},
+        {name: "steamroller", count: 75, category: "Vehicle"},
+        {name: "bobsled", count: 73, category: "Vehicle"},
+        {name: "screwdriver", count: 69, category: "Tool"},
+        {name: "blow dryer", count: 68, category: "Tool"},
+        {name: "wheelbarrow", count: 65, category: "Tool"},
+        {name: "steam locomotive", count: 63, category: "Vehicle"},
+        {name: "golfcart", count: 62, category: "Vehicle"},
+        {name: "snowplow", count: 61, category: "Vehicle"},
+        {name: "chainlink fence", count: 60, category: "Other"},
+        {name: "backhoe", count: 59, category: "Vehicle"},
+        {name: "dune buggy", count: 58, category: "Vehicle"},
+        {name: "pickup truck", count: 57, category: "Vehicle"},
+        {name: "passenger car", count: 56, category: "Vehicle"},
+        {name: "paddle", count: 54, category: "Other"},
+        {name: "Afghan hound", count: 53, category: "Creature"},
+        {name: "bannister", count: 51, category: "Other"},
+        {name: "sorrel", count: 51, category: "Other"},
+    ];
+
+    const width = 800, height = 600;
+    const svg = d3.select("#chart").append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .append("g");
+
+    const color = d3.scaleOrdinal(d3.schemeCategory10);
+    const pack = d3.pack().size([width, height]).padding(2);
+    let currentCategory = "All";
+
+    updateBubbles(data);
+
+    d3.selectAll(".tab").on("click", function() {
+        const clickedCategory = this.getAttribute("data-category");
+        if (clickedCategory === "All") {
+            currentCategory = "All";
+            d3.selectAll(".tab").classed("active-tab", false);
+            d3.select(this).classed("active-tab", true);
+            updateBubbles(data);
+        } else if (clickedCategory === currentCategory) {
+            currentCategory = "All";
+            d3.selectAll(".tab").classed("active-tab", false);
+            d3.select('.tab[data-category="All"]').classed("active-tab", true);
+            updateBubbles(data);
+        } else {
+            currentCategory = clickedCategory;
+            d3.selectAll(".tab").classed("active-tab", false);
+            d3.select(this).classed("active-tab", true);
+            const filteredData = data.filter(d => d.category === currentCategory);
+            updateBubbles(filteredData);
+        }
+    });
+
+    function updateBubbles(data) {
+        const root = d3.hierarchy({children: data}).sum(d => d.count);
+        const nodes = pack(root).leaves();
+
+        const bubbles = svg.selectAll("circle")
+            .data(nodes, d => d.data.name);
+
+        bubbles.enter()
+            .append("circle")
+            .attr("class", "bubble")
+            .merge(bubbles)
+            .transition()
+            .duration(500)
+            .attr("cx", d => d.x)
+            .attr("cy", d => d.y)
+            .attr("r", d => d.r)
+            .style("fill", d => color(d.data.name));
+
+        bubbles.exit().remove();
+
+        const labels = svg.selectAll("text")
+            .data(nodes, d => d.data.name);
+
+        labels.enter()
+            .append("text")
+            .merge(labels)
+            .transition()
+            .duration(500)
+            .attr("x", d => d.x)
+            .attr("y", d => d.y)
+            .attr("text-anchor", "middle")
+            .each(function(d) {
+                d3.select(this).selectAll("tspan").remove();
+                d3.select(this).append("tspan").attr("x", d.x).attr("dy", "-0.6em").text(d.data.name);
+                d3.select(this).append("tspan").attr("x", d.x).attr("dy", "1.2em").text(d.data.count);
+            });
+
+        labels.exit().remove();
+    }
+</script>
+</body>
+</html>
