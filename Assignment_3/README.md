@@ -45,6 +45,14 @@ https://observablehq.com/d/c6f9d60f9efa8eb3
 #### Output:
 - sightsCounts.json
 
+### Visualization 3:
+- Execute BFRO_vis_3.py in (Big-Foot\Assignment_3\Scripts\task2\vis3) to create a copy of the json used in this visualization. 
+- From the browser, navigate to Scripts/task2/vis3 and click on visualization_3.html to open and view the visualization.
+- Alternatively, view the visualization on our visualization website.
+
+#### Output:
+- BFRO_vis_3.json
+
 ## Task 3
 
 ### Starting the Solr Container
