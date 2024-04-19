@@ -221,7 +221,7 @@ Kyosuke Chikamatsu: Task3, 4, 5
 
 Devashish Sonawane: 
 
-Willy Tang: 
+Willy Tang: Visualization 3
 
 Ekaterina Shtyrkova: 
 
