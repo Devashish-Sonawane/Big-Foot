@@ -18,4 +18,4 @@ def extract_and_filter_entities(file_path, min_count=50, output_json_file='BFRO_
     
     return entities_dict
 
-entities_counts = extract_and_filter_entities(file_path='reports_v3.tsv', min_count=50)
+entities_counts = extract_and_filter_entities(file_path='Data/reports_v3.tsv', min_count=50)
