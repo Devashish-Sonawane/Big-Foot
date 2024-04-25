@@ -51,7 +51,7 @@ Json data file for visualization 1 (Line Chart):
 https://observablehq.com/d/c6f9d60f9efa8eb3 
 
 #### Output:
-- sightsCounts.json
+- BFRO_vis_2.json
 
 ### Visualization 3:
 - Execute BFRO_vis_3.py in (Big-Foot\Assignment_3\Scripts\task2\vis3) to create a copy of the json used in this visualization. 
