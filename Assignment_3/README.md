@@ -1,9 +1,11 @@
 # DSCI 550 Spring 2024 Assignment 3 (Team 9)
 This repository hosts the DSCI 550 Spring 2024 Assignment 3, ....
 
-## WEBPAGE
+## Webpage
 
 https://ambirlanga.github.io/DSCI550_BF_Web/
+
+Note: Mac users might be unable to interact with visualization 2. After some testing, we found out that this is NOT true for ALL MacOs enviroments, so this might be due to an incompatibility with a browser extension.
 
 ---
 
