@@ -1,5 +1,5 @@
 # DSCI 550 Spring 2024 Assignment 3 (Team 9)
-This repository hosts the DSCI 550 Spring 2024 Assignment 3, ....
+This repository hosts the DSCI 550 Spring 2024 Assignment 3.
 
 ## Webpage
 
@@ -237,16 +237,16 @@ python Scripts/task5/ingest_BFdata.py
 
 ## Work division
 
-Ariel Martinez: Visualization 2
+Ariel Martinez: Task 1 & 2: Visualization 2 (Map)
 
-Kyosuke Chikamatsu: Task3, 4, 5
+Kyosuke Chikamatsu: Task 3, 4, 5
 
-Devashish Sonawane: Visualization 4 (Nested Circle Packing)
+Devashish Sonawane: Task 1 & 2: visualization 4 (Zoom Bubbles)
 
-Willy Tang: Visualization 3
+Willy Tang: Task 1 & 2: visualization 3 (Bubble Chart)
 
-Ekaterina Shtyrkova: 
+Ekaterina Shtyrkova: Task 2: visualization 5 (WordCloud)
 
-Tomine Bergseth: Task 1 & 2, create website
+Tomine Bergseth: Task 1 & 2: visualization 1 (Line Chart), create website
 
 ---
