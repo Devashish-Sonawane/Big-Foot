@@ -67,7 +67,7 @@ https://observablehq.com/d/c6f9d60f9efa8eb3
 - Alternatively, the chart is available on our website.
 
 #### Ouput:
-- data.json
+- visualization_4.json
 
 ## Task 3
 
