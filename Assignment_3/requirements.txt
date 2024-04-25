@@ -2,3 +2,4 @@ pandas
 pysolr
 requests
 numpy
+addfips
