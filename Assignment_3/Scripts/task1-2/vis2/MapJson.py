@@ -30,5 +30,5 @@ listc = str(listb)
 listc = listc.replace('\'','\"')
 listc
 
-with open("sightsCounts.json", "w") as outfile:
+with open("BFRO_vis_2.json", "w") as outfile:
     outfile.write(listc)
