@@ -2,6 +2,4 @@ pandas
 pysolr
 requests
 numpy
-json
-re
 logging
