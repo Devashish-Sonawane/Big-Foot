@@ -26,20 +26,22 @@ Task 3, 4 and 5 require Docker installation.
 - In addition, Windows users need to have docker enable integration with the Linux distribution (Please check Settings/Resources/WSL integration on your Docker Desktop).
 - Windows users will execute Docker commands in your Linux distribution terminal. Mac users will execute Docker commands in your terminal.
 
-## Task 2
+## Task 1-2
+All visualizations can be viewed on the website: https://ambirlanga.github.io/DSCI550_BF_Web/
 
 ### Visualization 1:
-- Open Jupyter Notebook and navigate to Big-Foot\Assignment_3\Scripts\task1\task1_visualization1.ipynb. 
+- Open Jupyter Notebook and navigate to Big-Foot\Assignment_3\Scripts\task1-2\vis1\task1_visualization1.ipynb. 
 - Click run all cells in task_1_visualization_1.ipynb to aggregate and get json objects for the first visualization
   (the line chart).
-- To run locally, in the command line, navigate to the directory: cd Big-Foot\Assignment_3
+- In order to view the visualization locally rather than on the website, in the command line, navigate to the directory: cd Big-Foot\Assignment_3
 - Start a python server by typing this command: python -m http.server
 - If it doesn't open automatically, navigate to http://localhost:8000 or the url provided in the 
   command line.
-- From the browser, navigate to Scripts/task2 and click on visualization_1.html to open and view the visualization.
-- Alternatively, view the visualization on our visualization website.
+- From the browser, navigate to Scripts/task1-2/vis1 and click on visualization_1.html to open and view the visualization.
+- Alternatively, view the visualization on our visualization website, where it can be found under the Visualization tab as the Line Chart.
 
 #### Output:
+Json data file for visualization 1 (Line Chart):
 - Dataset1/BFRO_vis_1.json
 
 ### Visualization 2:
