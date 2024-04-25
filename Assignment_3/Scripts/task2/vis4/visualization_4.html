@@ -57,21 +57,26 @@
     <div id="secondary-header"> </div>
     <div class="container" style="margin-bottom: 2%">
     <ul class="nav nav-tabs" id="tabs" style="margin-top:10%">
+        <li class="active"><a href="#mime-viz" data-toggle="tab">D3.js Zoom Bubbles</a></li>
     </ul>
     </div>
-	<div class="container" id="vis2" style="padding-bottom: 10%">
+	<div class="container" id="vis4" style="padding-bottom: 10%">
         
-        <!-- D3 Viz START -->
-        <div id="observablehq-chart-cf2872da"></div>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
-        <script type="module">
-        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-        import define from "https://api.observablehq.com/d/50d5bb6e357d3e9b.js?v=4";
-        new Runtime().module(define, name => {
-          if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-cf2872da"));
-        });
-        </script>
-        <!-- D3 Viz END -->
+        <!-- VISUALIZATION START -->
+		<h1>Number of Bigfoot sightings per county</h1>
+		<br>
+		<p>Hovering through a circle shows the state and county in belongs, and the number of bigfoot sightings in the area.</p>
+		<p>The larger the circle, the more occurrence number of sightings in that county. </p>
+		<div id="observablehq-chart-cf2872da"></div>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+		<script type="module">
+		import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+		import define from "https://api.observablehq.com/d/50d5bb6e357d3e9b.js?v=4";
+		new Runtime().module(define, name => {
+		  if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-cf2872da"));
+		});
+		</script>
+        <!-- VISUALIZATION END -->
         
 	  </div>
 
@@ -88,6 +93,9 @@
     <script src="../js/scrolling-nav.js"></script>
 
 
+</body>
+
+</html>
 </body>
 
 </html>
