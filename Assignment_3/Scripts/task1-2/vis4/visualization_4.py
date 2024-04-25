@@ -66,5 +66,5 @@ def create_json(input_filename, output_filename):
         print(f"An error occurred: {str(e)}")
 
 input = r"..\Data\reports_v3.tsv"
-output = r"visualization_4.json"
+output = r"..\Dataset1\BFRO_vis_4.json"
 create_json(input, output)
