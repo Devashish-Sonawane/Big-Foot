@@ -59,6 +59,14 @@ https://observablehq.com/d/c6f9d60f9efa8eb3
 #### Output:
 - BFRO_vis_3.json
 
+### Visualization 4:
+- Execute Visualization_4.py in (Big-Foot\Assignment_3\Script\task2\vis4) to obtain the json file containing data used in the visualization. (Note: The program can take 10-15 minutes for producing the output)
+- Open file titled 'Visualization_4.html' located in Scripts/task2/vis4 to see the Circle Packing chart.
+- Alternatively, the chart is available on our website.
+
+#### Ouput:
+- data.json
+
 ## Task 3
 
 ### Starting the Solr Container
@@ -233,7 +241,7 @@ Ariel Martinez: Visualization 2
 
 Kyosuke Chikamatsu: Task3, 4, 5
 
-Devashish Sonawane: 
+Devashish Sonawane: Visualization 4 (Nested Circle Packing)
 
 Willy Tang: Visualization 3
 
