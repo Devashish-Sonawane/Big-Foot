@@ -62,12 +62,12 @@ https://observablehq.com/d/c6f9d60f9efa8eb3
 - BFRO_vis_3.json
 
 ### Visualization 4:
-- Execute Visualization_4.py in (Big-Foot\Assignment_3\Script\task2\vis4) to obtain the json file containing data used in the visualization. (Note: The program can take 10-15 minutes for producing the output)
-- Open file titled 'Visualization_4.html' located in Scripts/task2/vis4 to see the Circle Packing chart.
+- Execute Visualization_4.py in (..\Scripts\task1-2\vis4) to obtain the json file containing data used in the visualization. (Note: The program can take 10-15 minutes for producing the output)
+- Open file titled 'Visualization_4.html' located in the same directory (..\Scripts\task1-2\vis4) to see the Circle Packing chart.
 - Alternatively, the chart is available on our website.
 
 #### Ouput:
-- visualization_4.json
+- 'BFRO_vis_4.json' located in (..\Dataset1)
 
 ## Task 3
 
