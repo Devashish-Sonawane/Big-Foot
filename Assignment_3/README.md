@@ -42,7 +42,7 @@ Notes on website code folders:
 
 ### Visualization 1: Line Chart 
 - To view on website, open the following link: https://ambirlanga.github.io/DSCI550_BF_Web/html/visualization_1.html
-- 
+
 For generating the json for the line chart: 
 - Open Jupyter Notebook and navigate to Big-Foot\Assignment_3\Scripts\task1-2\vis1\task1_visualization1.ipynb. 
 - Click run all cells in task_1_visualization_1.ipynb to aggregate and get json objects for the first visualization
