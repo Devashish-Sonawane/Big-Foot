@@ -89,6 +89,15 @@ https://observablehq.com/d/c6f9d60f9efa8eb3
 #### Ouput:
 - 'BFRO_vis_4.json' located in (..\Dataset1)
 
+### Visualization 5:
+- Execute Visualization_5.py to obtain the json file containing data used in the visualization.
+- Open file titled 'Visualization_5.html' located in the same directory (..\Scripts\task1-2\vis5) to see the Word Cloud chart.
+- Alternatively, the chart is available on our website.
+
+#### Ouput:
+- 'BFRO_vis_5.json' located in (..\Dataset1)
+
+
 ## Task 3
 
 ### Starting the Solr Container
