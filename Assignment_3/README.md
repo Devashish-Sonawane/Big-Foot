@@ -55,8 +55,8 @@ In order to view the visualization locally rather than on the website, in the co
 - From the browser, navigate to Scripts/task1-2/vis1 and click on visualization_1.html to open and view the visualization.
 - Alternatively, view the visualization on our visualization website, where it can be found under the Visualization tab as the Line Chart.
 - Note that the file for this visualization is slightly different in this directory versus the one that can be found 
-  under the github website repository under the html folder with the same name as the file in the website has added code
-  to connect it to the website and be consistent with our website format whereas the file in this directory can be viewed through localhost
+  under the github website repository under the html folder with the same name. This is because the file in the website has added code
+  to connect the visualization to the website and be consistent with our website format whereas the file in this directory can be viewed through localhost
   as well, so it does not have that code. The only difference for the visualization is that this one does not have the description
   whereas the one on the website does. Feel free to view the website file on github if you want to look at both versions.
 
