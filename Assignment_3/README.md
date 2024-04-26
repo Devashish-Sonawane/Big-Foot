@@ -45,7 +45,7 @@ Json data file for visualization 1 (Line Chart):
 - Dataset1/BFRO_vis_1.json
 
 ### Visualization 2:
-- Execute MapJson.py in (Big-Foot\Assignment_3\Scripts\task1\vis2) from the Assignment_3 folder to create a copy of the json used in this visualization. 
+- Execute MapJson.py in (Big-Foot\Assignment_3\Scripts\task1-2\vis2) from the Assignment_3 folder to create a copy of the json used in this visualization. 
 - visualization_2.html uses a embedded visualization stored in:
 
 https://observablehq.com/d/c6f9d60f9efa8eb3 
@@ -54,8 +54,8 @@ https://observablehq.com/d/c6f9d60f9efa8eb3
 - BFRO_vis_2.json
 
 ### Visualization 3:
-- Execute BFRO_vis_3.py in (Big-Foot\Assignment_3\Scripts\task2\vis3) to create a copy of the json used in this visualization. 
-- From the browser, navigate to Scripts/task2/vis3 and click on visualization_3.html to open and view the visualization.
+- Execute BFRO_vis_3.py in (Big-Foot\Assignment_3\Scripts\task1-2\vis3) to create a copy of the json used in this visualization. 
+- From the browser, navigate to Scripts/task1-2/vis3 and click on visualization_3.html to open and view the visualization.
 - Alternatively, view the visualization on our visualization website.
 
 #### Output:
