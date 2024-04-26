@@ -27,9 +27,22 @@ Task 3, 4 and 5 require Docker installation.
 - Windows users will execute Docker commands in your Linux distribution terminal. Mac users will execute Docker commands in your terminal.
 
 ## Task 1-2
-All visualizations can be viewed on the website: https://ambirlanga.github.io/DSCI550_BF_Web/
 
-### Visualization 1:
+### Website
+All visualizations can be viewed on the website: https://ambirlanga.github.io/DSCI550_BF_Web/
+Link to public git repository with website code: https://github.com/ambirlanga/ambirlanga.github.io/tree/main/DSCI550_BF_Web
+
+Notes on website code folders:
+- For the website, we followed the ufo template: https://github.com/USCDataScience/ufo.usc.edu/tree/master- The html folder has all of our html files for visualizations
+- The css folder has css code I took from the template
+- The json folder has our json data for the visualizations
+- The js folder has js code I took from the template
+- The images folder has our front page image, logo, and thumbnail images.
+- The index file outside the folders follow the one in the template with updates for ours.
+
+### Visualization 1: Line Chart 
+- To view on website, open the following link: https://ambirlanga.github.io/DSCI550_BF_Web/html/visualization_1.html
+To view the visualization through the file in task1-2/vis1/visualization_1.html in local host instead, follow the instructions below:
 - Open Jupyter Notebook and navigate to Big-Foot\Assignment_3\Scripts\task1-2\vis1\task1_visualization1.ipynb. 
 - Click run all cells in task_1_visualization_1.ipynb to aggregate and get json objects for the first visualization
   (the line chart).
@@ -39,6 +52,11 @@ All visualizations can be viewed on the website: https://ambirlanga.github.io/DS
   command line.
 - From the browser, navigate to Scripts/task1-2/vis1 and click on visualization_1.html to open and view the visualization.
 - Alternatively, view the visualization on our visualization website, where it can be found under the Visualization tab as the Line Chart.
+- Note that the file for this visualization is slightly different in this directory versus the one that can be found 
+  under the github website repository under the html folder with the same name as the file in the website has added code
+  to connect it to the website and be consistent with our website format whereas the file in this directory can be viewed through localhost
+  as well, so it does not have that code. The only difference for the visualization is that this one does not have the description
+  whereas the one on the website does. Feel free to view the website file on github if you want to look at both versions.
 
 #### Output:
 Json data file for visualization 1 (Line Chart):
