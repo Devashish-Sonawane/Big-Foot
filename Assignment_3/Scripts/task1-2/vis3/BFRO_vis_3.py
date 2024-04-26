@@ -45,5 +45,5 @@ def process_entities(file_path: str, min_count: int = 50, output_json_file: str 
     return categorized_data
 
 # Example usage
-file_path = 'reports_v3.tsv'
+file_path = 'Data/reports_v3.tsv'
 categorized_entities = process_entities(file_path)
