@@ -87,7 +87,7 @@ https://observablehq.com/d/c6f9d60f9efa8eb3
 - 'BFRO_vis_4.json' located in (..\Dataset1)
 
 ### Visualization 5:
-- Execute Visualization_5.py to obtain the json file containing data used in the visualization.
+- Execute Visualization_5.py to obtain the json file containing data- an array of arrays, where each inner array contains a string representing a word or term, paired with a numerical value to represent the most common words in bigfoot sightings description.
 - Open file titled 'Visualization_5.html' located in the same directory (..\Scripts\task1-2\vis5) to see the Word Cloud chart.
 - Alternatively, the chart is available on our website.
 
