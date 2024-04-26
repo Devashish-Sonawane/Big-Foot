@@ -1,9 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>D3.js Bubble Chart</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Scrolling Nav CSS -->
+    <link href="../css/scrolling-nav.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../css/styles.css" rel="stylesheet">
+    <script src="../js/jquery.js"></script>
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+
+<!-- Header -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="../index.html#page-top" style="color:white">Home</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-custom">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <li class="hidden"><a class="page-scroll" href="../index.html#page-top" style="color:white"></a></li>
+                <li><a class="page-scroll" href="../index.html#about" style="color:#ffffff">About</a></li>
+                <li><a class="page-scroll" href="../index.html#features" style="color:#ffffff">Insights</a></li>
+                <li><a class="page-scroll" href="../index.html#search" style="color:#ffffff">Search</a></li>
+                <li><a class="page-scroll" href="../html/d3-examples.html" style="color:#ffffff">Visualizations</a></li>
+            </ul>
+            <a href="http://usc.edu" class="pull-right">
+              <img src="../images/usc-primary-logotype.svg" width="176px" height="38px"></img>
+            </a>
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Navigation -->
+Navigation -->
+    <div id="secondary-header"> </div>
+    <div class="container" style="margin-bottom: 2%">
+    <ul class="nav nav-tabs" id="tabs" style="margin-top:7%">
+        <li class="active"><a href="#mime-viz" data-toggle="tab">D3.js Bubble Chart</a></li>
+    </ul>
+    </div>
+	<div class="container" id="vis3" style="padding-bottom: 10%">
+    <!-- Description -->
+    <h1>Detected Objects Bubble Chart</h1>
+    <br>
+    <p>This is a bubble chart indicating the frequency of entities appearing in the "detected objects", based on the auto-detection of AI-generated big foot sighting images. The sizes of the bubbles are positively correlated to the counts of entities, which are categorized into five groups: Nature, Creature, Vehicle, Tool, Other. The corresponding group will pop out when clicking on the tab.</p>
+
+    <div id="chart-container"></div>
+
+
+
+<!--DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detected Objects Bubble Chart</title>
+    <title>Interactive Bubble Chart with Categories</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
         .bubble {
@@ -30,8 +101,26 @@
         }
     </style>
 </head>
-<body>
-<div id="tabs">
+<body-->
+        <style>
+    /* Style the tabs to look like buttons */
+    .tab {
+        display: inline-block;
+        padding: 10px 20px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        cursor: pointer;
+        border-radius: 4px;
+        margin-right: 5px; /* Adjust as needed */
+    }
+
+    /* Style the active tab differently */
+    .active-tab {
+        background-color: #007bff;
+        color: #fff;
+    }
+</style>
+<div id="buttons">
     <span class="tab active-tab" data-category="All">All</span>
     <span class="tab" data-category="Nature">Nature</span>
     <span class="tab" data-category="Creature">Creature</span>
@@ -39,6 +128,13 @@
     <span class="tab" data-category="Tool">Tool</span>
     <span class="tab" data-category="Other">Other</span>
 </div>
+        <!--div id="buttons">
+        <button id="All">All</button>
+        <button id="Nature">Nature</button>
+        <button id="Creature">Creature</button>
+        <button id="Tool">Tool</button>
+            <button id="Other">Other</button>
+    </div-->
 <div id="chart"></div>
 
 <script>
@@ -170,5 +266,6 @@
         labels.exit().remove();
     }
 </script>
+    </div>
 </body>
 </html>
