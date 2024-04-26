@@ -1,96 +1,472 @@
-{
-    "lakeside": 735,
-    "valley": 631,
-    "mountain bike": 546,
-    "mountain tent": 405,
-    "alp": 396,
-    "worm fence": 389,
-    "stone wall": 367,
-    "park bench": 308,
-    "gorilla": 274,
-    "unicycle": 246,
-    "cliff": 231,
-    "gazelle": 228,
-    "brown bear": 225,
-    "sandbar": 221,
-    "viaduct": 219,
-    "impala": 206,
-    "barn": 189,
-    "pole": 169,
-    "American black bear": 158,
-    "bison": 157,
-    "orangutan": 156,
-    "suspension bridge": 154,
-    "snowmobile": 149,
-    "baboon": 143,
-    "dogsled": 138,
-    "boathouse": 138,
-    "trailer truck": 136,
-    "rapeseed": 136,
-    "megalith": 136,
-    "maze": 131,
-    "chain saw": 124,
-    "chimpanzee": 123,
-    "hatchet": 121,
-    "lumbermill": 111,
-    "book jacket": 110,
-    "canoe": 106,
-    "gibbon": 105,
-    "racer": 103,
-    "minivan": 102,
-    "macaque": 100,
-    "hen-of-the-woods": 99,
-    "snowplow": 98,
-    "shovel": 97,
-    "mobile home": 97,
-    "jeep": 96,
-    "street sign": 96,
-    "chainlink fence": 93,
-    "rifle": 92,
-    "military uniform": 91,
-    "comic book": 89,
-    "geyser": 88,
-    "hay": 88,
-    "ibex": 87,
-    "hartebeest": 87,
-    "ox": 86,
-    "seashore": 86,
-    "pickup": 84,
-    "volcano": 82,
-    "fur coat": 81,
-    "siamang": 79,
-    "assault rifle": 77,
-    "beach wagon": 76,
-    "picket fence": 76,
-    "breakwater": 76,
-    "dam": 76,
-    "Labrador retriever": 76,
-    "traffic light": 74,
-    "coyote": 74,
-    "wild boar": 71,
-    "water buffalo": 70,
-    "warthog": 69,
-    "dingo": 69,
-    "cloak": 69,
-    "ski": 68,
-    "wallaby": 67,
-    "freight car": 66,
-    "plow": 66,
-    "bicycle-built-for-two": 66,
-    "tow truck": 64,
-    "patas": 63,
-    "bighorn": 62,
-    "swing": 61,
-    "timber wolf": 61,
-    "recreational vehicle": 59,
-    "llama": 58,
-    "brass": 58,
-    "birdhouse": 58,
-    "mailbox": 57,
-    "red wolf": 57,
-    "passenger car": 56,
-    "paddle": 54,
-    "Afghan hound": 53,
-    "bannister": 51,
-    "sorrel": 51
-}
+[
+    {
+        "name": "lakeside",
+        "count": 735,
+        "category": "Nature"
+    },
+    {
+        "name": "valley",
+        "count": 631,
+        "category": "Nature"
+    },
+    {
+        "name": "mountain bike",
+        "count": 546,
+        "category": "Vehicle"
+    },
+    {
+        "name": "mountain tent",
+        "count": 405,
+        "category": "Tool"
+    },
+    {
+        "name": "alp",
+        "count": 396,
+        "category": "Nature"
+    },
+    {
+        "name": "worm fence",
+        "count": 389,
+        "category": "Other"
+    },
+    {
+        "name": "stone wall",
+        "count": 367,
+        "category": "Nature"
+    },
+    {
+        "name": "park bench",
+        "count": 308,
+        "category": "Other"
+    },
+    {
+        "name": "gorilla",
+        "count": 274,
+        "category": "Creature"
+    },
+    {
+        "name": "unicycle",
+        "count": 246,
+        "category": "Other"
+    },
+    {
+        "name": "cliff",
+        "count": 231,
+        "category": "Nature"
+    },
+    {
+        "name": "gazelle",
+        "count": 228,
+        "category": "Creature"
+    },
+    {
+        "name": "brown bear",
+        "count": 225,
+        "category": "Creature"
+    },
+    {
+        "name": "sandbar",
+        "count": 221,
+        "category": "Nature"
+    },
+    {
+        "name": "viaduct",
+        "count": 219,
+        "category": "Other"
+    },
+    {
+        "name": "impala",
+        "count": 206,
+        "category": "Creature"
+    },
+    {
+        "name": "barn",
+        "count": 189,
+        "category": "Other"
+    },
+    {
+        "name": "pole",
+        "count": 169,
+        "category": "Other"
+    },
+    {
+        "name": "American black bear",
+        "count": 158,
+        "category": "Creature"
+    },
+    {
+        "name": "bison",
+        "count": 157,
+        "category": "Creature"
+    },
+    {
+        "name": "orangutan",
+        "count": 156,
+        "category": "Creature"
+    },
+    {
+        "name": "suspension bridge",
+        "count": 154,
+        "category": "Other"
+    },
+    {
+        "name": "snowmobile",
+        "count": 149,
+        "category": "Vehicle"
+    },
+    {
+        "name": "baboon",
+        "count": 143,
+        "category": "Creature"
+    },
+    {
+        "name": "dogsled",
+        "count": 138,
+        "category": "Vehicle"
+    },
+    {
+        "name": "boathouse",
+        "count": 138,
+        "category": "Other"
+    },
+    {
+        "name": "trailer truck",
+        "count": 136,
+        "category": "Vehicle"
+    },
+    {
+        "name": "rapeseed",
+        "count": 136,
+        "category": "Other"
+    },
+    {
+        "name": "megalith",
+        "count": 136,
+        "category": "Other"
+    },
+    {
+        "name": "maze",
+        "count": 131,
+        "category": "Other"
+    },
+    {
+        "name": "chain saw",
+        "count": 124,
+        "category": "Tool"
+    },
+    {
+        "name": "chimpanzee",
+        "count": 123,
+        "category": "Other"
+    },
+    {
+        "name": "hatchet",
+        "count": 121,
+        "category": "Tool"
+    },
+    {
+        "name": "lumbermill",
+        "count": 111,
+        "category": "Other"
+    },
+    {
+        "name": "book jacket",
+        "count": 110,
+        "category": "Other"
+    },
+    {
+        "name": "canoe",
+        "count": 106,
+        "category": "Tool"
+    },
+    {
+        "name": "gibbon",
+        "count": 105,
+        "category": "Creature"
+    },
+    {
+        "name": "racer",
+        "count": 103,
+        "category": "Other"
+    },
+    {
+        "name": "minivan",
+        "count": 102,
+        "category": "Vehicle"
+    },
+    {
+        "name": "macaque",
+        "count": 100,
+        "category": "Creature"
+    },
+    {
+        "name": "hen-of-the-woods",
+        "count": 99,
+        "category": "Other"
+    },
+    {
+        "name": "snowplow",
+        "count": 98,
+        "category": "Tool"
+    },
+    {
+        "name": "shovel",
+        "count": 97,
+        "category": "Tool"
+    },
+    {
+        "name": "mobile home",
+        "count": 97,
+        "category": "Vehicle"
+    },
+    {
+        "name": "jeep",
+        "count": 96,
+        "category": "Vehicle"
+    },
+    {
+        "name": "street sign",
+        "count": 96,
+        "category": "Other"
+    },
+    {
+        "name": "chainlink fence",
+        "count": 93,
+        "category": "Tool"
+    },
+    {
+        "name": "rifle",
+        "count": 92,
+        "category": "Tool"
+    },
+    {
+        "name": "military uniform",
+        "count": 91,
+        "category": "Tool"
+    },
+    {
+        "name": "comic book",
+        "count": 89,
+        "category": "Other"
+    },
+    {
+        "name": "geyser",
+        "count": 88,
+        "category": "Nature"
+    },
+    {
+        "name": "hay",
+        "count": 88,
+        "category": "Other"
+    },
+    {
+        "name": "ibex",
+        "count": 87,
+        "category": "Creature"
+    },
+    {
+        "name": "hartebeest",
+        "count": 87,
+        "category": "Creature"
+    },
+    {
+        "name": "ox",
+        "count": 86,
+        "category": "Creature"
+    },
+    {
+        "name": "seashore",
+        "count": 86,
+        "category": "Nature"
+    },
+    {
+        "name": "pickup",
+        "count": 84,
+        "category": "Vehicle"
+    },
+    {
+        "name": "volcano",
+        "count": 82,
+        "category": "Nature"
+    },
+    {
+        "name": "fur coat",
+        "count": 81,
+        "category": "Other"
+    },
+    {
+        "name": "siamang",
+        "count": 79,
+        "category": "Creature"
+    },
+    {
+        "name": "assault rifle",
+        "count": 77,
+        "category": "Tool"
+    },
+    {
+        "name": "beach wagon",
+        "count": 76,
+        "category": "Vehicle"
+    },
+    {
+        "name": "picket fence",
+        "count": 76,
+        "category": "Other"
+    },
+    {
+        "name": "breakwater",
+        "count": 76,
+        "category": "Other"
+    },
+    {
+        "name": "dam",
+        "count": 76,
+        "category": "Other"
+    },
+    {
+        "name": "Labrador retriever",
+        "count": 76,
+        "category": "Other"
+    },
+    {
+        "name": "traffic light",
+        "count": 74,
+        "category": "Other"
+    },
+    {
+        "name": "coyote",
+        "count": 74,
+        "category": "Creature"
+    },
+    {
+        "name": "wild boar",
+        "count": 71,
+        "category": "Creature"
+    },
+    {
+        "name": "water buffalo",
+        "count": 70,
+        "category": "Creature"
+    },
+    {
+        "name": "warthog",
+        "count": 69,
+        "category": "Creature"
+    },
+    {
+        "name": "dingo",
+        "count": 69,
+        "category": "Creature"
+    },
+    {
+        "name": "cloak",
+        "count": 69,
+        "category": "Other"
+    },
+    {
+        "name": "ski",
+        "count": 68,
+        "category": "Other"
+    },
+    {
+        "name": "wallaby",
+        "count": 67,
+        "category": "Creature"
+    },
+    {
+        "name": "freight car",
+        "count": 66,
+        "category": "Vehicle"
+    },
+    {
+        "name": "plow",
+        "count": 66,
+        "category": "Tool"
+    },
+    {
+        "name": "bicycle-built-for-two",
+        "count": 66,
+        "category": "Vehicle"
+    },
+    {
+        "name": "tow truck",
+        "count": 64,
+        "category": "Vehicle"
+    },
+    {
+        "name": "patas",
+        "count": 63,
+        "category": "Creature"
+    },
+    {
+        "name": "bighorn",
+        "count": 62,
+        "category": "Creature"
+    },
+    {
+        "name": "swing",
+        "count": 61,
+        "category": "Other"
+    },
+    {
+        "name": "timber wolf",
+        "count": 61,
+        "category": "Creature"
+    },
+    {
+        "name": "recreational vehicle",
+        "count": 59,
+        "category": "Vehicle"
+    },
+    {
+        "name": "llama",
+        "count": 58,
+        "category": "Creature"
+    },
+    {
+        "name": "brass",
+        "count": 58,
+        "category": "Other"
+    },
+    {
+        "name": "birdhouse",
+        "count": 58,
+        "category": "Other"
+    },
+    {
+        "name": "mailbox",
+        "count": 57,
+        "category": "Creature"
+    },
+    {
+        "name": "red wolf",
+        "count": 57,
+        "category": "Creature"
+    },
+    {
+        "name": "passenger car",
+        "count": 56,
+        "category": "Vehicle"
+    },
+    {
+        "name": "paddle",
+        "count": 54,
+        "category": "Tool"
+    },
+    {
+        "name": "Afghan hound",
+        "count": 53,
+        "category": "Creature"
+    },
+    {
+        "name": "bannister",
+        "count": 51,
+        "category": "Other"
+    },
+    {
+        "name": "sorrel",
+        "count": 51,
+        "category": "Other"
+    }
+]
