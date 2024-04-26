@@ -3,3 +3,4 @@ pysolr
 requests
 numpy
 addfips
+nltk
