@@ -29,11 +29,12 @@ Task 3, 4 and 5 require Docker installation.
 ## Task 1-2
 
 ### Website
-All visualizations can be viewed on the website: https://ambirlanga.github.io/DSCI550_BF_Web/
+All visualizations can be viewed on the website: https://ambirlanga.github.io/DSCI550_BF_Web/  
 Link to public git repository with website code: https://github.com/ambirlanga/ambirlanga.github.io/tree/main/DSCI550_BF_Web
 
 Notes on website code folders:
-- For the website, we followed the ufo template: https://github.com/USCDataScience/ufo.usc.edu/tree/master- The html folder has all of our html files for visualizations
+- For the website, we followed the ufo template: https://github.com/USCDataScience/ufo.usc.edu/tree/master
+- The html folder has all of our html files for visualizations
 - The css folder has css code I took from the template
 - The json folder has our json data for the visualizations
 - The js folder has js code I took from the template
@@ -44,56 +45,57 @@ Notes on website code folders:
 - To view on website, open the following link: https://ambirlanga.github.io/DSCI550_BF_Web/html/visualization_1.html
 
 For generating the json for the line chart: 
-- Open Jupyter Notebook and navigate to Big-Foot\Assignment_3\Scripts\task1-2\vis1\task1_visualization1.ipynb. 
-- Click run all cells in task_1_visualization_1.ipynb to aggregate and get json objects for the first visualization
+- Open Jupyter Notebook and navigate to `$BIGFOOT_ASSN3\Scripts\task1-2\vis1\task1_visualization1.ipynb`. 
+- `$BIGFOOT_ASSN3`: root direcoty of this project.
+- Click run all cells in `task_1_visualization_1.ipynb` to aggregate and get json objects for the first visualization
   (the line chart).
 
-In order to view the visualization locally rather than on the website, in the command line, navigate to the directory: cd Big-Foot\Assignment_3
-- Start a python server by typing this command: python -m http.server
+In order to view the visualization locally rather than on the website, in the command line, navigate to the directory: `cd $BIGFOOT_ASSN3`
+- Start a python server by typing this command: `python -m http.server`
 - If it doesn't open automatically, navigate to http://localhost:8000 or the url provided in the 
   command line.
-- From the browser, navigate to Scripts/task1-2/vis1 and click on visualization_1.html to open and view the visualization.
+- From the browser, navigate to `$BIGFOOT_ASSN3\Scripts\task1-2\vis1` and click on `visualization_1.html` to open and view the visualization.
 - Alternatively, view the visualization on our visualization website, where it can be found under the Visualization tab as the Line Chart.
 - Note that the file for the visualization you can view locally is slightly different than the one for the website.
-  To view the file for the website, navigate to Scripts/task1-2/vis1/visualization_1_website.html
+  To view the file for the website, navigate to `$BIGFOOT_ASSN3\Scripts\task1-2\vis1\visualization_1_website.html`
 
 #### Output:
 Json data file for visualization 1 (Line Chart):
-- Dataset1/BFRO_vis_1.json
+- `Dataset1\BFRO_vis_1.json`
 
 ### Visualization 2:
-- Execute MapJson.py in (Big-Foot\Assignment_3\Scripts\task1-2\vis2) from the Assignment_3 folder to create a copy of the json used in this visualization. 
-- visualization_2.html uses a embedded visualization stored in:
+- Execute `MapJson.py` in `$BIGFOOT_ASSN3\Scripts\task1-2\vis2` from the `$BIGFOOT_ASSN3` to create a copy of the json used in this visualization. 
+- `visualization_2.html` uses a embedded visualization stored in:
 
 https://observablehq.com/d/c6f9d60f9efa8eb3 
 
 #### Output:
-- BFRO_vis_2.json
+- `BFRO_vis_2.json`
 
 ### Visualization 3:
-- Execute BFRO_vis_3.py in (Big-Foot\Assignment_3\Scripts\task1-2\vis3) to create a copy of the json used in this visualization. 
-- From the browser, navigate to Scripts/task1-2/vis3 and click on visualization_3.html to open and view the visualization.
+- Execute `BFRO_vis_3.py` in `$BIGFOOT_ASSN3\Scripts\task1-2\vis3` to create a copy of the json used in this visualization. 
+- From the browser, navigate to Scripts/task1-2/vis3 and click on `visualization_3.html` to open and view the visualization.
 - Alternatively, view the visualization on our visualization website.
 
 #### Output:
-- BFRO_vis_3.json
+- `BFRO_vis_3.json`
 
 ### Visualization 4:
-- Execute Visualization_4.py in (..\Scripts\task1-2\vis4) to obtain the json file containing data used in the visualization. (Note: The program can take 10-15 minutes for producing the output)
-- Open file titled 'Visualization_4.html' located in the same directory (..\Scripts\task1-2\vis4) to see the Circle Packing chart.
+- Execute `Visualization_4.py` in `$BIGFOOT_ASSN3\Scripts\task1-2\vis4` to obtain the json file containing data used in the visualization. (Note: The program can take 10-15 minutes for producing the output)
+- Open file titled `Visualization_4.html` located in the same directory `$BIGFOOT_ASSN3\Scripts\task1-2\vis4` to see the Circle Packing chart.
 - Alternatively, the chart is available on our website.
 
 #### Ouput:
-- 'BFRO_vis_4.json' located in (..\Dataset1)
+- `BFRO_vis_4.json` located in `$BIGFOOT_ASSN3\Dataset1`
 
 ### Visualization 5:
-- Execute makeBFROjson.py to obtain intermediate json file (output: BFRO.json).
-- Execute Visualization_5.py to obtain the json file containing data- an array of arrays, where each inner array contains a string representing a word or term, paired with a numerical value to represent the most common words in bigfoot sightings description (BFRO.json is needed to execute).
-- Open file titled 'Visualization_5.html' located in the same directory (..\Scripts\task1-2\vis5) to see the Word Cloud chart.
+- Execute `makeBFROjson.py` to obtain intermediate json file (output: `BFRO.json`).
+- Execute `Visualization_5.py` to obtain the json file containing data- an array of arrays, where each inner array contains a string representing a word or term, paired with a numerical value to represent the most common words in bigfoot sightings description (`BFRO.json` is needed to execute).
+- Open file titled `Visualization_5.html` located in the same directory `$BIGFOOT_ASSN3\Scripts\task1-2\vis5` to see the Word Cloud chart.
 - Alternatively, the chart is available on our website.
 
 #### Ouput:
-- 'BFRO_vis_5.json' located in (..\Dataset1)
+- `BFRO_vis_5.json` located in `$BIGFOOT_ASSN3\Dataset1`
 
 
 ## Task 3
@@ -274,8 +276,7 @@ Devashish Sonawane: Task 1 & 2: visualization 4 (Zoom Bubbles)
 
 Willy Tang: Task 1 & 2: visualization 3 (Bubble Chart)
 
-Ekaterina Shtyrkova: Task 2: visualization 5 (WordCloud)
+Ekaterina Shtyrkova: Task 1 & 2: visualization 5 (Word Cloud)
 
 Tomine Bergseth: Task 1 & 2: visualization 1 (Line Chart), create website
 
----
