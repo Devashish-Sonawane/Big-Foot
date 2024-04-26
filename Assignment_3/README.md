@@ -42,11 +42,13 @@ Notes on website code folders:
 
 ### Visualization 1: Line Chart 
 - To view on website, open the following link: https://ambirlanga.github.io/DSCI550_BF_Web/html/visualization_1.html
-To view the visualization through the file in task1-2/vis1/visualization_1.html in local host instead, follow the instructions below:
+- 
+For generating the json for the line chart: 
 - Open Jupyter Notebook and navigate to Big-Foot\Assignment_3\Scripts\task1-2\vis1\task1_visualization1.ipynb. 
 - Click run all cells in task_1_visualization_1.ipynb to aggregate and get json objects for the first visualization
   (the line chart).
-- In order to view the visualization locally rather than on the website, in the command line, navigate to the directory: cd Big-Foot\Assignment_3
+
+In order to view the visualization locally rather than on the website, in the command line, navigate to the directory: cd Big-Foot\Assignment_3
 - Start a python server by typing this command: python -m http.server
 - If it doesn't open automatically, navigate to http://localhost:8000 or the url provided in the 
   command line.
