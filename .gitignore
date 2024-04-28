@@ -160,7 +160,3 @@ cython_debug/
 .idea/
 
 Assignment_1/data/WeatherEvents_Jan2016-Dec2022.csv
-Assignment_3/Scripts/task4/Images
-Assignment_3/Scripts/task4/smqtk_logs
-*.docx
-*.xlsx
